@@ -1,9 +1,11 @@
-let idObra
+let idObra;
 
 let parametroURL = new URLSearchParams(window.location.search)
 let obra_id = parametroURL.get('obra_id')
 
-let statusFiltro
+let statusFiltro;
+
+let saidaModal;
 
 
 function getStatusServico() {
