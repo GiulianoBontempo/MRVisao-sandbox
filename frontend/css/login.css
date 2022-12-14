@@ -1,0 +1,162 @@
+/* Importa a fonte utilizada */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+/* Estiliza o corpo da pagina, alterando inclusive a fonte */
+body{
+    margin: 0;
+    font-family: 'Noto-Sans', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    
+}
+
+/* Estiliza todos os elementos do documento */
+*{
+    padding:0;
+    margin:0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* Estiliza a divisória principal do login */
+.login{
+    width: 100vw;
+    height: 100vh;
+    background-color:rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estiliza a parte esquerda do login */
+.loginEsquerda{
+    width: 50vw;
+    height: 100vh;
+    margin-left: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom:5%;
+}
+
+/* Estiliza o texto dentro da divisória esquerda de login */
+.loginEsquerda > h1 {
+    font-size: 3vw;
+    margin-top: 10%;
+    color: seagreen;
+}
+
+/* Estiliza a imagem logo da mrv */
+.imagemLoginEsquerda{
+    width:25vw;
+    margin-left: -40%;
+    margin-bottom: -10%;
+}
+
+/* Estiliza a parte direita da pagina de login */
+.loginDireita{
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+/* Estiliza o card de login */
+.cardLogin{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background-color: seagreen;
+    border-radius: 20px;
+    box-shadow: aliceblue
+} 
+
+/* Estiliza o texto dentro do card de login */
+.cardLogin > h1 {
+    color: #ff7f50;
+    font-weight: 800;
+    margin: 0;
+}
+
+/* Estiliza as divisórias de usuario e senha */
+.campoDeTexto{
+    width: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+/* Estiliza os inputs de usuário e senha */
+.campoDeTexto > input{
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: rgb(245, 247, 248);
+    color: rgb(0, 0, 1);
+    font-size: 12pt;
+    box-shadow: coral;
+    outline: none;
+    box-sizing: border-box;
+} 
+
+/* Estiliza os textos de label dos inputs de usuario e senha */
+.campoDeTexto > label {
+    color: aliceblue;
+    margin-bottom: 10px;
+}
+/* Estiliza o botão de login */
+.botaoLogin{
+    width: 60%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/* Adapta o tamanho do card para devices com largura menor que 950px */
+@media only screen and (max-widht: 950px){
+    .cardLogin{
+        width: 60%;
+    }
+}
+
+/* Adapta o tamanho do card para devices com largura menor que 60% */
+@media only screen and (max-widht: 60%){
+    .login{
+        flex-direction: column;
+    }
+    .loginEsquerda > h1{
+        display: none;
+    }
+
+    .loginEsquerda{
+        width: 100%;
+        height: auto;
+    }
+
+    .loginDireita{
+        width: 100%;
+        height: auto;
+    }
+
+    .imagemLoginEsquerda{
+        width: 50vh;
+    }
+
+}
+

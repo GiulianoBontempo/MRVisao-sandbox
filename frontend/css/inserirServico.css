@@ -1,0 +1,16 @@
+
+form {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin-top: 3% !important;
+}
+
+h2 {
+    text-align: left;
+}
+
+.input {
+    width: 10%;
+    margin-left: 41%;
+}

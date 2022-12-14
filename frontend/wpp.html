@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="css/cssWpp.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <img id="fotoLogo" src="logo.png" onclick="mudarNav()">
+            <div class="menuNavbarGrande">
+                <a class="menuNavbar" onclick="abrirMenu()">MENU</a>
+                <a class="loginNavbar" href="">LOGIN</a>
+                <a class="registrarNavbar" href="">REGISTRAR-SE</a>
+
+
+
+            </div>
+
+            <button class="btnDropDown">
+                <span class="material-icons">menu</span>
+            </button>
+        </nav>  
+ 
+
+        <div id="menu" class="mobileMenu">
+            <a class="item1DropDown" href="">Login</a>
+            <a class="item2DropDown" href="">Registrar-se</a>
+            <a class="item3DropDown" href="">Obras</a>
+            <a class="item4DropDown" href="">Como Funciona</a>
+            <a class="item5DropDown" href="">Home</a>
+
+
+        </div>
+
+
+    
+    
+    </header>
+    <div class="titulo">
+        <a>Fale Conosco no WhatsApp!</a>
+    </div>
+
+    <div class="titulo">
+        <a>Selecione seu Estado!</a>
+        <select id="filtro" onchange="aparecer()">
+            <option value="none"></option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+            <option value="EX">Estrangeiro</option>
+        </select>
+    </div>
+
+    <div id="wpp" class="wpp">
+        <a>Clique aqui para falar com um de nossos representantes!</a><br><br>
+        <button onclick="abrirwpp()"> Ir para o Whatsapp</button>
+    </div>
+
+    
+ 
+    <script src="js/Wpp.js"></script>
+</body>
+</html>

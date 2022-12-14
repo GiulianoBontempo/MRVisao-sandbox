@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../backend/inserirServico.js"></script>
+    <title>INSERIR Servico</title>
+    <link rel="stylesheet" href="css/inserirServico.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+
+    
+
+    <div class="container justify-content-center align-items-center">
+
+        <form name="form1" method="post" action="/insereObra">
+              <h2>Inserir Serviço</h2>
+              <div class="input">
+                  NOME: <input type="text" name="nome" value="" required>
+              </div>
+              <br>
+              <div class="input">
+                  ENDEREÇO: <input type="text" name="endereco" value="" required>
+              </div>
+              <br>
+              <div class="input">
+                  DATA-INICIO: <input type="date" name="dataInicio" value="" required>
+              </div>
+              <br>
+              <div class="input">
+                  DATA-FIM: <input type="date" name="dataFim" value="" required>
+              </div>
+              <br>
+              <div class="input">
+                  DESCRIÇÃO: <input type="text" name="descricao" rows="" value="" required>
+              </div>
+              <br>
+              <div class="input">
+              <input type="submit" value="INSERIR">
+          </form>
+      
+      </div>
+    <!--
+    <form name="form1" method="post" action="/insereServico?obra_id=5">
+        Tipo: <input type="text" name="tipo" value="" required>
+        <br>
+        DATA-INICIO: <input type="date" name="dataInicio" value="" required>
+        <br>
+        DATA-FIM: <input type="date" name="dataFim" value="" required>
+        <br>
+        DESCRIÇÃO: <input type="text" name="descricao" value="" required>
+        <br>
+        <input type="submit" value="INSERIR">
+    </form> -->
+    <script>
+        let parametroURL = new URLSearchParams(window.location.search)
+        let obra_id = parametroURL.get('obra_id')
+
+        console.log(obra_id)
+
+        document.getElementById("formulario").innerHTML += `<form name="form1" method="post" action="/insereServico?obra_id=${obra_id}">Tipo: <input type="text" name="tipo" value="" required><br>DATA-INICIO: <input type="date" name="dataInicio" value="" required><br>DATA-FIM: <input type="date" name="dataFim" value="" required><br>DESCRIÇÃO: <input type="text" name="descricao" value="" required><br><input type="submit" value="INSERIR"></form>`
+    
+    </script>
+</body>
+
+</html>

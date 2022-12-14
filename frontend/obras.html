@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="css/cssNavbar.css" rel="stylesheet"/>
+    <link href="css/obras.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <img id="fotoLogo" src="../imgs/MRVisão.png" onclick="voltarHome()">
+            <div class="menuNavbarGrande">
+                <a class="menuNavbar" onclick="abrirMenu()">Menu</a>
+                <a class="loginNavbar" href="login.html">Login</a>
+                <a class="registrarNavbar" href="cadastro.html">Registrar-se</a>
+
+
+
+            </div>
+
+            <button class="btnDropDown">
+                <span class="material-icons">menu</span>
+            </button>
+        </nav>  
+ 
+
+        <div id="menu" class="mobileMenu">
+            <a class="item1DropDown" href="home.html">Home</a>
+            <a class="item2DropDown" href="obras.html">Obras</a>
+            <a class="item3DropDown" href="comoFunciona.html">Como Funciona</a>
+            <a class="item4DropDown" href="cadastro.html">Registrar-se</a>
+            <a class="item5DropDown" href="login.html">Login</a>
+
+
+        </div>
+        <div class="modal" id="modalLogout" tab-index="-1" aria-labelledby="tituloDoModal" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="tituloDoModal">
+                  Logout
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Tem certeza que deseja se deslogar?</p>
+              </div>
+              <div class="modal-footer">
+                <button id="botaoLogout" type="button" onclick="location.href = '../logout';" class="btn btn-primary">Logout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </header>
+
+    <div id="divFiltros">
+        <!-- Select de filtro por estado -->
+        <label for="estado" class="labelFiltros">Estado</label>
+        <select id="estado" name="estado" onchange="definirCidades()">
+            <option value="todos">Todos</option>
+        </select>
+
+        <!-- Select de filtro por cidade -->
+        <label for="cidade" class="labelFiltros">Cidade</label>
+        <select id="cidade" name="cidade">
+            <option value="todos">Todas</option>
+        </select>
+
+        <!-- Select de filtro por serviço -->
+        <label for="servico" class="labelFiltros">Serviço</label>
+        <select id="servico" name="servico">
+            <option value="todos">Todos</option>
+        </select>
+
+        <!-- Botão de filtrar -->
+        <button onclick="filtroRegional()">Filtrar</button>
+    </div>
+
+    <!-- Div das obras, que será atualizada pelo script -->
+    <div id="nomesDasObras" class="row gy-4 overflow-auto"></div>
+
+    <script src="../backend/obras.js"></script>
+    <script src="js/joao.js"></script>
+
+</body>
+</html>

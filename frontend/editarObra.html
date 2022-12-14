@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSERIR OBRAS</title>
+</head>
+
+<body>
+
+    <div id="formEditar"></div>
+    
+
+    <script>
+
+        let parametroURL = new URLSearchParams(window.location.search)
+        let obra_id = parametroURL.get('obra_id')
+
+        console.log(obra_id)
+
+        fetch('/obraId?obra_id=' + obra_id)
+            .then((response) => {
+            return response.json();
+            })
+            .then((data) => {
+                obra = data;
+                obra.map(function (obra) {
+                    console.log(obra.nome)
+                    document.getElementById("formEditar").innerHTML = `
+                        <form name="form1" method="post" action="/atualizaObra?obra_id=${obra.obra_id}">
+                            NOME: <input type="text" name="nome" value="${obra.nome}" required>
+                            <br>
+                            ENDEREÇO: <input type="text" name="endereco" value="${obra.endereco}" required>
+                            <br>
+                            DATA-INICIO: <input type="date" name="dataInicio" value="${obra.dataInicio}" required>
+                            <br>
+                            DATA-FIM: <input type="date" name="dataFim" value="${obra.dataFim}" required>
+                            <br>
+                            DESCRIÇÃO: <input type="text" name="descricao" value="${obra.descricao}" required>
+                            <br>
+                            <input type="submit" value="INSERIR">
+                        </form>`
+
+                })
+                
+            })
+
+
+    </script>
+</body>
+
+</html>

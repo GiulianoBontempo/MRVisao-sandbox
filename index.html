@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <title>CRUD</title>
+</head>
+<h1>Listagem de Obras</h1>
+<p><a href="/frontend/inserir.html">INSERIR NOVA OBRA</a></p>
+<p><a href="/frontend/obras.html">PAGINA DE OBRAS</a></p>
+<p><a href="/frontend/comoFunciona.html">PAGINA DE COMO FUNCIONA</a></p>
+<p><a href="/frontend/login.html">PAGINA DE LOGIN</a></p>
+<p><a href="/frontend/meuPerfil.html">PAGINA DE PERFIL</a></p>
+<p><a href="/frontend/ofertas.html">PAGINA DE OFERTAS</a></p>
+<p><a href="/frontend/home.html">HOME LUQUITA</a></p>
+
+<script>
+    const url = '/obras';
+
+    fetch(url)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let obras = data;
+            let saida = '';
+            obras.map(function (obras) {
+                saida += '<strong> ' + `${obras.nome}` + '</strong> ' + `${obras.endereco}` + '</strong> ' + `${obras.dataInicio}` + '</strong> ' + `${obras.dataFim}` + '</strong> ' + `${obras.descricao}`;
+                saida += ' - <a href="/atualizaObra?obra_id=' + `${obras.obra_id}` + '">EDITAR</a>';
+                saida += ' | <a href="/removeObra?obra_id=' + `${obras.obra_id}` + '">REMOVER</a></br>';
+            });
+            document.getElementById('resultado').innerHTML = saida;
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+
+    fetch('/usuario')
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let usuarios = data;
+            let saida2 = '';
+            usuarios.map(function (usuarios) {
+                saida2 += '<strong> ' + `${usuarios.nomeFantasia}` + '</strong> ' + `${usuarios.email}` + '</strong> ' + `${usuarios.senha}` + '</strong> ';
+                saida2 += ' - <a href="/atualizaUsuario.html?usuario_id=' + `${usuarios.usuario_id}` + '">EDITAR</a>';
+                saida2 += ' | <a href="/removeUsuario?usuario_id=' + `${usuarios.usuario_id}` + '">REMOVER</a></br>';
+            });
+            document.getElementById('resultado_usuario').innerHTML = saida2;
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+
+    fetch('/admin')
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let admin = data;
+            let saida3 = '';
+            admin.map(function (admin) {
+                saida3 += '<strong> ' + `${admin.email}` + '</strong> ' + `${admin.senha}` + '</strong> ' + '</strong> ';
+            });
+            document.getElementById('resultado_admin').innerHTML = saida3;
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    
+
+
+</script>
+
+<body>
+    <h2>OBRAS</h2>
+    <div id="resultado"></div>
+    <h2>USUARIOS</h2>
+    <div id="resultado_usuario"></div>
+    <h2>ADMIN</h2>
+    <div id="resultado_admin"></div>
+</body>
+
+</html>

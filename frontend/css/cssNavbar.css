@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+
+}
+
+
+ /*Navbar*/
+nav{
+    position:relative;
+    z-index:99;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to left, rgba(0, 107, 63, 0.9), rgb(41, 161, 105));
+
+    padding: 1rem 1.5rem;
+
+}
+
+
+/* colocar o pointer ao passar o mouse em cima dos textos da navbar */
+.menuNavbar{
+cursor: pointer;
+}
+
+/* deixar apenas a opção "MENU" quando o cliente estiver logado */
+.menuNavbar.logado{
+    font-size:150%;
+    margin-left: 60%;
+}
+
+/* Sumir com a opção "login" na navbar ao logar */
+.loginNavbar.logado{
+    display:none;
+
+}
+
+/* Sumir com a opção "registrase" na navbar ao logar */
+.registrarNavbar.logado{
+    display:none;
+}
+
+
+
+/* design da navbar quando estiver na responsividade do PC */
+.menuNavbarGrande{
+    display:none;
+    align-items: center;
+    height:1px;
+
+    width: 60%;
+}
+
+/* Textos dentro da navbar na responsividade do PC */
+.menuNavbarGrande a{
+    user-select: none;
+    color:whitesmoke;
+    text-decoration: none;
+    transition: 0.6s;
+    margin-left:20%;
+    font-size: 115%;
+
+}
+/* Animação ao passar o mouse nos textos dentro da navbar na responsividade do PC */
+.menuNavbarGrande a:hover{
+    color:black;
+    background-color:rgb(255, 255, 255) ;
+    padding: 3%;
+    border-radius: 6px;
+
+}
+
+/* animar o botao de Dropdown do menu quando estiver na responsividade Celular */
+.btnDropDown:hover{
+    transform: scale(1.2);
+
+}
+
+/* design do botao DropDown na Responsividade Celular */
+.btnDropDown{
+    transition: 1s;
+    appearance: none;
+    outline:none;
+    border:none;
+    background: none;
+    cursor: pointer;
+    display:block;
+    width: 2rem;
+    height:2rem;
+}
+
+
+.btnDropDown span{
+    color:black;
+    font-size: 2rem;
+}
+
+/* design menu dropdown */
+.mobileMenu{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 100%;
+    z-index:98;
+    padding-top: 6rem;
+    opacity: 0;
+    transform: translateY(-100%);
+    background-color: black;
+    color:red;
+    transition: 0.3s;
+
+
+}
+/* Ativar o menu dropdown*/
+.mobileMenu.is-open{
+    opacity: 1;
+    transform:translateY(0);
+
+}
+
+/* Letras no menu dropdown*/
+.mobileMenu a{
+    display:block;
+    padding: 1rem;
+    color:white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2rem;
+    transition: 1s;
+}
+
+/* Quando o cliente estiver logado, algumas opçoes dentro do dropdown somem */
+.mobileMenu a.sumir{
+display:none;
+}
+/* Animar ao passar o mouse sobre os textos do  menu dropdown */
+.mobileMenu a:hover{
+    color:black;
+    background: #66FF99;
+    
+}
+
+/* Foto Do Logo na NavBar */
+#fotoLogo{
+    width: 15%;
+    margin-left: 65px;
+
+}
+
+/* Responsividade PC/Celular/Tablet*/
+@media (min-width:1100px){
+    .btnDropDown{
+        display:none;
+    }
+    .menuNavbarGrande{
+        display:flex;
+    }
+}
+
+/* Div da foto*/
+.foto_container{
+    align-items: center;
+}
+/* Foto do site*/
+.foto{
+   width: 60%;
+    margin-left: 20%;
+    margin-right: 30%;
+   padding: 10px;
+}
+
+#botaoLogout{
+    background-color: #04844B;
+    border:  0px;
+}

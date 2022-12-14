@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+/* Escolha da fonte */ 
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Noto-sans', sans-serif;
+}
+
+/* Classe relativa ao corpo e a centralização dos itens, como também a escolha da cor de fundo */
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom, rgba(0, 107, 63, 0.9), rgba(7, 157, 86, 1));;
+}
+
+/*Escolha das cores*/
+::selection{
+  color: #fff;
+  background: #00cc00;
+}
+
+/*Serve para posicionar e dimensionar o container */ 
+.container{
+  width: 330px;
+  background: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 50px 35px 10px 35px;
+}
+/*Serve para escolher o tamanho do cabeçalho */
+.container header{
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+}
+
+/* Proibe o scroll down na parte exterior do form */
+.container .form-outer{
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Define o tamanho horizontal da página em 400% para caber todas as 4 etapas do form (agora só tem 3) */
+.container .form-outer form{
+  display: flex;
+  width: 400%;
+}
+
+/* Define a transição de etapa para a outra */
+.form-outer form .page{
+  width: 25%;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Estiliza o título da página */
+.form-outer form .page .title{
+  text-align: left;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+/* Estiliza os campos das páginas */
+.form-outer form .page .field{
+  width: 330px;
+  height: 45px;
+  margin: 45px 0;
+  display: flex;
+  position: relative;
+}
+
+/* Estiliza os labels dos campos */
+form .page .field .label{
+  position: absolute;
+  top: -30px;
+  font-weight: 500;
+}
+
+/* Estiliza os inputs */
+form .page .field input{
+  height: 100%;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 18px;
+}
+
+/* Estiliza os selects */
+form .page .field select{
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+/* Estiliza os botões */
+form .page .field button{
+  width: 100%;
+  height: calc(100% + 5px);
+  border: none;
+  background: #00cc00;
+  margin-top: -20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.5s ease;
+}
+
+/* Diversas definições sobre os botões */
+form .page .field button:hover{
+  background: #000;
+}
+form .page .btns button{
+  margin-top: -20px!important;
+}
+form .page .btns button.prev{
+  margin-right: 3px;
+  font-size: 17px;
+}
+form .page .btns button.next{
+  margin-left: 3px;
+}
+
+/* Diversas definições sobre a progress bar */
+.container .progress-bar{
+  display: flex;
+  margin: 40px 0;
+  user-select: none;
+}
+.container .progress-bar .step{
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+.container .progress-bar .step p{
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 8px;
+}
+/*Serve para adicionar cor e tamanho as bolinhas que representam a linha de progresso */
+.progress-bar .step .bullet{
+  height: 25px;
+  width: 25px;
+  border: 2px solid rgb(0, 0, 0);
+  display: inline-block;
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+}
+/*Classe refrente a cor dentro das bolinhas */
+.progress-bar .step .bullet.active{
+  border-color: #00cc00;
+  background: #00cc00;
+}
+/*Classe relativa ao posicionamento dos números dentro das bolinhas */
+.progress-bar .step .bullet span{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/*Classe responsável por tampar o número ao usuário avançar no formulário */
+.progress-bar .step .bullet.active span{
+  display: none;
+}
+/*Classe relativa a espessão das linhas entre os números e também das cores */
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after{
+  position: absolute;
+  content: '';
+  bottom: 11px;
+  right: -51px;
+  height: 3px;
+  width: 44px;
+  background: #000000;
+}
+
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after{
+  display: none;
+}
+/* Classe responsável pela iteratividade do check */
+.progress-bar .step p.active{
+  color: #00cc00;
+  transition: 0.2s linear;
+}
+/*Classe relativa ao check da barra de progresso */
+.progress-bar .step .check{
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+/*Classe responsável pela cor branca do check */
+.progress-bar .step .check.active{
+  display: block;
+  color: #fff;
+}

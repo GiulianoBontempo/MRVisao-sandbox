@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Formulário de várias etapas</title>
+    <link rel="stylesheet" href="css/cssNavbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/pageCadastro.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src=""></script>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <header>
+      <nav>
+          <img id="fotoLogo" src="../imgs/MRVisão.png" onclick="voltarHome()">
+          <div class="menuNavbarGrande">
+              <a class="menuNavbar" onclick="abrirMenu()">Menu</a>
+              <a class="loginNavbar" href="login.html">Login</a>
+              <a class="registrarNavbar" href="cadastro.html">Registrar-se</a>
+
+
+
+          </div>
+
+          <button class="btnDropDown">
+              <span class="material-icons">menu</span>
+          </button>
+      </nav>  
+
+
+      <div id="menu" class="mobileMenu">
+          <a class="item1DropDown" href="home.html">Home</a>
+          <a class="item2DropDown" href="obras.html">Obras</a>
+          <a class="item3DropDown" href="comoFunciona.html">Como Funciona</a>
+          <a class="item4DropDown" href="cadastro.html">Registrar-se</a>
+          <a class="item5DropDown" href="login.html">Login</a>
+
+
+      </div>
+
+  
+  </header>
+
+
+    <div class="container">
+      <header>Cadastro</header>
+      <!-- Aqui está a barra de progresso -->
+      <div class="progress-bar">
+        <!-- Aqui está a primeira etapa, empreiteira -->
+        <div class="step">
+          <p>Empreiteira</p>
+          <div class="bullet">
+            <span>1</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <!-- Aqui está a segunda etapa, contato -->
+        <div class="step">
+          <p>Contato</p>
+          <div class="bullet">
+            <span>2</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <!-- Aqui está a terceira etapa, conta -->
+        <div class="step">
+          <p>Conta</p>
+          <div class="bullet">
+            <span>3</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div>
+        <!-- <div class="step">
+          <p>Enviar</p>
+          <div class="bullet">
+            <span>4</span>
+          </div>
+          <div class="check fas fa-check"></div>
+        </div> -->
+      </div>
+      <!-- Divisória externa do cadastro -->
+      <div class="form-outer">
+        <!-- Form que envolve o cadastro e manda as informações para a requisição post de usuário -->
+        <form method="post" action="/insereUsuario">
+          <!-- Página de empreiteira -->
+          <div class="page slide-page">
+            <div class="title">Informação básica:</div>
+            <div class="field">
+              <div class="label">Nome Fantasia</div>
+              <input type="text" name="nome">
+            </div>
+            <div class="field">
+              <div class="label">CNPJ</div>
+              <input type="text" name="cnpj">
+            </div>
+            <div class="field">
+              <button type="button" class="firstNext next">Próximo</button>
+            </div>
+          </div>
+
+          <!-- Página de contato -->
+          <div class="page">
+            <div class="title">Informações de contato</div>
+            <div class="field">
+              <div class="label">Seu Nome Completo</div>
+              <input type="text" name="nome_empreiteiro">
+            </div>
+            <div class="field">
+              <div class="label">Número de telefone</div>
+              <input type="Number" name="contato">
+            </div>
+            <div class="field btns">
+              <button class="prev-1 prev">Anterior</button>
+              <button type="button" class="next-1 next">Próximo</button>
+            </div>
+          </div>
+          
+          <!-- <div class="page">
+            <div class="title">Nascimento:</div>
+            <div class="field">
+              <div class="label">Data</div>
+              <input type="text" name="data">
+            </div>
+            <div class="field">
+              <div class="label">Gênero</div>
+              <select name="genero">
+                <option>Masculino</option>
+                <option>Feminino</option>
+                <option>Outros</option>
+              </select>
+            </div>
+            <div class="field btns">
+              <button class="prev-2 prev">Anterior</button>
+              <button class="next-2 next">Próximo</button>
+            </div>
+          </div> -->
+          
+          <!-- Página de conta -->
+          <div class="page">
+            <div class="title">Detalhes de login:</div>
+            <div class="field">
+              <div class="label">Email</div>
+              <input type="text" name="email">
+            </div>
+            <div class="field">
+              <div class="label">Senha</div>
+              <input type="password" name="senha">
+            </div>
+            <div class="field btns">
+              <button class="prev-3 prev">Anterior</button>
+              <button type="submit" class="submit">Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="js/joao.js"></script>
+    <script src="js/scriptCadastro.js"></script>
+    
+  </body> 
+  
+  
+  </html>

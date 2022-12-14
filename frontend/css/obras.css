@@ -1,0 +1,104 @@
+/* Edita o corpo do documento e passa características como a fonte para seus filhos */
+body{
+    background-color: white;
+    width: 100vw;
+    font-family: Verdana;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Serve para remover o padding e border de elementos */
+.noPadding{
+    padding: 0;
+    border: 0;
+    font-size: 0;
+    
+}
+
+/* Classe relativa a estilização do título das obras */
+.tituloObra{
+    font-size: 1.5vw;
+    color: white;
+    padding: 0;
+    border: 0;
+    margin-bottom: 3%;
+    margin-top: 2%;
+    font-weight: bold;
+}
+
+/* Classe relativa a estilização dos detalhes das obras */
+.detalhesObra{
+    font-size: 1vw;
+    color: white;
+    padding: 0;
+    border: 0;
+    margin-bottom: 0.5%;
+    margin-top: 1%;
+}
+
+/* Transforma a cor de fundo de elementos no verde definido no guia de estilos */
+.green{
+    background-color: #079d56;
+}
+
+/* Edita propriedades da classe card do bootstrap */
+.card{
+    width: 90%;
+    margin: auto;
+}
+
+/* Classe relativa ao texto dos labels dos selects de filtragem */
+.textoFiltros{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+/* Classe relativa a estilização de links, mais especificamente, removendo o underline */
+.linkIndecorado{
+    text-decoration: none;
+}
+
+/* Define as cores dos labels dos filtros */
+.labelFiltros{
+    color: white;
+}
+
+/* Estiliza a divisória que mostra as obras */
+#nomesDasObras{
+    margin: auto;
+    width: 95%;
+    height: 73.8vh;
+}
+
+/* Estiliza a divisória que contem os filtros */
+#divFiltros{
+    display: flexbox;
+    padding-bottom: 1vh;
+    padding-top: 0vh;
+    padding-left: 3vw;
+    border: 0;
+    margin: 0;
+    background-image: linear-gradient(to left, rgba(0, 107, 63, 0.9), rgb(41, 161, 105));
+}
+
+/* Estiliza a navbar */
+#navBar{
+    background-color: #FFB719;
+}
+
+/* Estiliza o texto da esquerda da nav bar */
+.textoDireita{
+    text-align: right;
+}
+
+/* Estiliza o texto central da navbar */
+.textoCentro{
+    text-align: center;
+    margin-top: 2vh;
+}
+
+/* Classe para tornar elementos arrendodados. Atua nos cards e nas imagens das obras */
+.arredondado{
+    border-radius: 15px;
+}

@@ -1,0 +1,92 @@
+/*No Body, setamos a cor de fundo e a fonte base da página*/
+
+body {
+    background-color: #DAD9D9;
+    font-family: Verdana;
+}
+
+/* Os estilos abaixo tem como objetivo tornar a Navbar esteticamente agradável*/
+
+*{
+    padding:0;
+    margin:0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* O objetivo do estilo a seguir é setar a cor de fundo, a largura da div e um margin para centralizá-la*/
+
+#retangulo_Maior {
+    background-color: rgb(243, 250, 245);
+    width: 90%;
+    margin-left: 5%;
+    padding-bottom: 0.01%;
+    margin-bottom: 5%;
+    /* margin-top: 5%; */
+    /* margin-bottom: 5%; */
+}
+
+.linha_obras {
+    margin-top: 5%;
+}
+
+/* Nas id's e classes a seguir foi necessário retirar o padding natural do bootstrap, colocar margin's e arredondamento, a fins estéticos */
+
+#tira_padding {
+    padding: 0% !important;
+}
+
+#meus_Projetos {
+    margin-bottom: 10%;
+}
+
+.card_servicos {
+    padding: 0% !important;
+}
+
+.img_obra {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.feedback {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nota_servico {
+    border-left: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.nota_servico p {
+    margin-bottom: 0%;
+}
+
+.informacoes_card {
+    background: linear-gradient(180deg, #FF8B22 0%, #FFB719 100%);
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    width: 100%;
+    height: 50%;
+}
+
+.informacoes_card h3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.informacoes_baixo {
+    margin-top: 10%;
+}
+
+#botaoAdicionaCard {
+    width: 6rem;
+    height: 5rem;
+}

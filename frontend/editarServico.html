@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../backend/inserirServico.js"></script>
+    <title>EDITAR Servico</title>
+</head>
+
+<body>
+
+    
+
+    <div id="formEditar">
+        
+    </div>
+    <!--
+    <form name="form1" method="post" action="/insereServico?obra_id=5">
+        Tipo: <input type="text" name="tipo" value="" required>
+        <br>
+        DATA-INICIO: <input type="date" name="dataInicio" value="" required>
+        <br>
+        DATA-FIM: <input type="date" name="dataFim" value="" required>
+        <br>
+        DESCRIÇÃO: <input type="text" name="descricao" value="" required>
+        <br>
+        <input type="submit" value="INSERIR">
+    </form> -->
+    <script>
+        let parametroURL = new URLSearchParams(window.location.search)
+        let servico_id = parametroURL.get('servico_id')
+
+        console.log(servico_id)
+
+        fetch('/servicosId?servico_id=' + servico_id)
+            .then((response) => {
+            return response.json();
+            })
+            .then((data) => {
+                servico = data;
+                servico.map(function (servico) {
+                    console.log(servico.tipo)
+                    document.getElementById("formEditar").innerHTML = `
+                        <form name="form1" method="post" action="/atualizaServico?servico_id=${servico.servico_id}">
+                            Tipo: <input type="text" name="tipo" value="${servico.tipo}" required>
+                            <br>
+                            DATA-INICIO: <input type="date" name="dataInicio" value="${servico.dataInicio}" required>
+                            <br>
+                            DATA-FIM: <input type="date" name="dataFim" value="${servico.dataFim}" required>
+                            <br>
+                            DESCRIÇÃO: <input type="text" name="descricao" value="${servico.descricao}" required>
+                            <br>
+                            <input type="submit" value="INSERIR">
+                        </form>`
+
+                })
+                
+            })
+    
+    </script>
+</body>
+
+</html>

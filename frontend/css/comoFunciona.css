@@ -1,0 +1,84 @@
+
+body {
+    background-color: #edecec;
+    font-family: Verdana;
+}
+
+#div_maior {
+    background-color: white;
+    padding: 0%;
+}
+
+.accordion-button {
+    background-color: #079D56;
+    display: flex !important;
+    justify-content: center !important;
+    /* margin-top: 1%; */
+    border: none;
+}
+
+span{
+    margin-left: 6%;
+}
+
+.accordion-body {
+    margin-left: 15%;
+}/* 
+
+.accordion-item:first-of-type .accordion-button {
+    border-top-right-radius: 0%;
+    border-top-left-radius: 0%;
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+    border-bottom-right-radius: 0%;
+    border-bottom-left-radius: 0%;
+    
+} */
+
+.accordion-button:focus, .accordion-button:not(.collapsed){
+    background-color: #079D56;
+    color: black;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: var(--bs-accordion-btn-icon);
+    color: black;
+}
+
+#head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.linha_etapa {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numero_etapa {
+    background-color: #079D56;
+    height: 6em;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numero_etapa h1 {
+    color: white;
+}
+
+#ultima_linha {
+    padding-bottom: 8%;
+}
+
+h1{
+    font-size: xx-large;
+}

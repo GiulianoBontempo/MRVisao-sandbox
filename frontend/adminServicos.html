@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/meuPerfil.css">
+    <!-- <link rel="stylesheet" href="css/home&meuPerfil.css"> -->
+    <link rel="stylesheet" href="css/adminServicos.css">
+    <title>Home - Admin</title>
+</head>
+
+<body onload="getStatusServico()">
+    
+    <!-- A lógica do código é baseada em diversas div's sucessivas com container, row e col, a fim de organizar a disposição dos elementos na página -->
+    
+    <div class="container align-items-center" id="retangulo_maior">
+        
+        <!-- Abaixo tem-se uma div row que contém os elementos de uma espécie de Navbar da página -->
+
+        <div class="row justify-content-center align-items-center" id="primeira_linha">
+            <div class="col-3 rounded-4" id="barra_de_pesquisa">
+                <input type="text" class="rounded-4" placeholder="Buscar" id="inputPesquisa">
+                <ion-icon name="search-outline"></ion-icon>
+            </div>
+            <div class="col-3" id="filtro">
+                <div class="row align-items-center">
+                    <select class="col-8" name="filtroStatus" id="filtroStatus">
+                        <option value="Em andamento">Em andamento</option>
+                        <option value="Canceladas">Cancelado</option>
+                        <option value="Concluidas">Concluido</option>
+                    </select>
+                    <button class="offset-1 col-3" id="botaoFiltrar" onclick="getStatusServico()">Filtrar</button>
+                </div>
+            </div>
+            <div class="offset-1 col-2 align-items-center" id="adiciona_obra">
+                <button class="rounded-5" id="botao_adiciona_obra" onclick="redirecionaAdicionaServico()">
+                    <div class="row align-items-center" id="botao_adiciona_margin">
+                        <img class="col-3" src="../imgs/mais (1).png" alt="">
+                        <p class="col-8">Adicionar Serviços</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="row align-items-center" id="Meus_Projetos">
+            <h3 class="justify-content-start align-items-center">Serviços</h3>
+        </div>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Número</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Empreiteiro</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col" id="elemento1">Cancelar</th>
+                    <th scope="col" id="elemento2">Concluir</th>
+                    
+                </tr>
+            </thead>
+            <tbody id="tabelaServicos">
+                
+            </tbody>
+        </table>
+        
+        
+    </div>
+</div>
+</div>
+<div id="entradaModal"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script src="../backend/adminServicos.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--CÓDIGO PARA CARDS-->
+<!-- <div class="container" id="catalogoObras">
+    <div class="row linha_obras" id="linhaObras0" >
+        <div class="card_servicos offset-1 col-2">
+            <div class="row">
+                <img class="img_obra" src="../imgs/obra-mrv-campo-grande-ms-881485.jpg" alt=""> 
+            </div>
+            
+            <div class="container informacoes_card">
+                <div class="row">
+                    <h3><strong>Alexandre Halfed</strong></h3>  
+                </div>
+                <div class="row informacoes_baixo" >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6 feedback">
+                                <a href="">
+                                    <img class="icon_feedback" src="../imgs/feedback-do-cliente.png" alt="feedback">
+                                </a>
+                            </div>
+                            
+                            <div class="col-6 nota_servico">
+                                <p>Nota: 10,00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card_servicos offset-1 col-2">
+
+            <div class="row">
+                <img class="img_obra" src="../imgs/obra-mrv-campo-grande-ms-881485.jpg" alt=""> 
+            </div>
+            
+            <div class="container informacoes_card">
+                <div class="row">
+                    <h3>Alexandre Halfed</h3>  
+                </div>
+                <div class="row informacoes_baixo" >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6 feedback">
+                                <a href="">
+                                    <img class="icon_feedback" src="../imgs/feedback-do-cliente.png" alt="feedback">
+                                </a>
+                            </div>
+                            
+                            <div class="col-6 nota_servico">
+                                <p>Nota: 10,00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card_servicos offset-1 col-2">
+            <div class="row">
+                <img class="img_obra" src="../imgs/obra-mrv-campo-grande-ms-881485.jpg" alt=""> 
+            </div>
+            
+            <div class="container informacoes_card">
+                <div class="row">
+                    <h3>Alexandre Halfed</h3>  
+                </div>
+                <div class="row informacoes_baixo" >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6 feedback">
+                                <a href="">
+                                    <img class="icon_feedback" src="../imgs/feedback-do-cliente.png" alt="feedback">
+                                </a>
+                            </div>
+                            
+                            <div class="col-6 nota_servico">
+                                <p>Nota: 10,00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card_servicos offset-1 col-2">
+            <div class="row">
+                <img class="img_obra" src="../imgs/obra-mrv-campo-grande-ms-881485.jpg" alt=""> 
+            </div>
+            
+            <div class="container informacoes_card">
+                <div class="row">
+                    <h3>Alexandre Halfed</h3>  
+                </div>
+                <div class="row informacoes_baixo" >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6 feedback">
+                                <a href="">
+                                    <img class="icon_feedback" src="../imgs/feedback-do-cliente.png" alt="feedback">
+                                </a>
+                            </div>
+                            
+                            <div class="col-6 nota_servico">
+                                <p>Nota: 10,00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="col-3" id="adicionaCard" onclick="adicionaCard()"></button>
+    </div> -->

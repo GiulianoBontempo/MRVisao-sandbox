@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/cssNavbar.css">
+        <link rel="stylesheet" href="css/home.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+    <body>
+
+        <!-- Navbar -->
+        <header>
+          <nav>
+              <img id="fotoLogo" src="../imgs/MRVisão.png" onclick="voltarHome()">
+              <div class="menuNavbarGrande">
+                  <a class="menuNavbar" onclick="abrirMenu()">Menu</a>
+                  <a class="loginNavbar" href="login.html">Login</a>
+                  <a class="registrarNavbar" href="cadastro.html">Registrar-se</a>
+  
+  
+  
+              </div>
+  
+              <button class="btnDropDown">
+                  <span class="material-icons">menu</span>
+              </button>
+          </nav>  
+   
+  
+          <div id="menu" class="mobileMenu">
+              <a class="item1DropDown" href="home.html">Home</a>
+              <a class="item2DropDown" href="obras.html">Obras</a>
+              <a class="item3DropDown" href="comoFunciona.html">Como Funciona</a>
+              <a class="item4DropDown" href="cadastro.html">Registrar-se</a>
+              <a class="item5DropDown" href="login.html">Login</a>
+  
+  
+          </div>
+          <div class="modal" id="modalLogout" tab-index="-1" aria-labelledby="tituloDoModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="tituloDoModal">
+                    Logout
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Tem certeza que deseja se deslogar?</p>
+                </div>
+                <div class="modal-footer">
+                  <button id="botaoLogout" type="button" onclick="location.href = '../logout';" class="btn btn-primary">Logout</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </header>
+    <section>
+        <!-- Div que contem o círculo, que fica na parte inferior direita da tela -->
+        <div class="circle"></div>
+        
+        <div class="content">
+            <!-- Div que possui o chamado para a página de obras -->
+            <div class="text">
+                
+                <p><strong>A MRVisão</strong> é uma plataforma que conecta você, empreiteiro(a), as principais oportunidades da MRV.</p>
+                <a href="obras.html">Visualizar todas as nossas oportunidades</a>
+            </div>
+        </div>
+    
+        </ul>
+        <!-- Imagem do prédio que fica no canto inferior direito. -->
+        <div class="boxImg">
+            <img src="../imgs/predio-residencial-png-6.png" alt="" class="img1">
+        </div>
+    </section>
+    <script src ="js/joao.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSERIR OBRAS</title>
+    <link rel="stylesheet" href="css/inserir.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<header>
+    <nav>
+        <img id="fotoLogo" src="../imgs/MRVisão.png" onclick="voltarHome()">
+        <div class="menuNavbarGrande">
+            <a class="menuNavbar" onclick="abrirMenu()">Menu</a>
+            <a class="loginNavbar" href="login.html">Login</a>
+            <a class="registrarNavbar" href="cadastro.html">Registrar-se</a>
+
+
+
+        </div>
+
+        <button class="btnDropDown">
+            <span class="material-icons">menu</span>
+        </button>
+    </nav>  
+
+
+    <div id="menu" class="mobileMenu">
+        <a class="item1DropDown" href="home.html">Home</a>
+        <a class="item2DropDown" href="obras.html">Obras</a>
+        <a class="item3DropDown" href="comoFunciona.html">Como Funciona</a>
+        <a class="item4DropDown" href="cadastro.html">Registrar-se</a>
+        <a class="item5DropDown" href="login.html">Login</a>
+
+
+    </div>
+
+    
+  </header>
+
+  <div class="container justify-content-center align-items-center">
+
+  <form name="form1" method="post" action="/insereObra">
+        <h2>Novas Obras</h2>
+        <div class="input">
+            NOME: <input type="text" name="nome" value="" required>
+        </div>
+        <br>
+        <div class="input">
+            ENDEREÇO: <input type="text" name="endereco" value="" required>
+        </div>
+        <br>
+        <div class="input">
+            Cidade: <input type="text" name="cidade" value="" required>
+        </div>
+        <br>
+        <div class="input">
+            Estado: <input type="text" name="estado" value="" required>
+        </div>
+        <br>
+        <div class="input">
+            DATA-INICIO: <input type="date" name="dataInicio" value="" required>
+        </div>
+        <br>
+        <div class="input">
+            DATA-FIM: <input type="date" name="dataFim" value="" required>
+        </div>
+        <br>
+        <div class="input">
+            DESCRIÇÃO: <input type="text" name="descricao" rows="" value="" required>
+        </div>
+        <br>
+        <div class="input">
+        <input type="submit" value="INSERIR">
+    </form>
+
+</div>
+
+<div class="modal" id="modalLogout" tab-index="-1" aria-labelledby="tituloDoModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Tem certeza que deseja se deslogar?</p>
+        </div>
+        <div class="modal-footer">
+          <button id="botaoLogout" type="button" onclick="location.href = '../logout';" class="btn btn-primary">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- <br><br><br>
+
+    <form name="form2" method="post" action="/insereAdmin">
+        email: <input type="text" name="email" value="" required>
+        <br>
+        senha: <input type="text" name="senha" value="" required>
+        <br>
+        <input type="submit" value="INSERIR">
+    </form> -->
+
+    <script src="js/joao.js"></script>
+</body>
+
+</html>
