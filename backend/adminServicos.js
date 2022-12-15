@@ -6,6 +6,8 @@ let obra_id = parametroURL.get('obra_id')
 let statusFiltro
 let saidaModal = ""
 
+let saidaModal = '';
+
 
 function getStatusServico() {
     const select = document.getElementById('filtroStatus');
