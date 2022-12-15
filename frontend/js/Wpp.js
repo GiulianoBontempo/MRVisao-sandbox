@@ -21,32 +21,50 @@ const item3DropDown=document.querySelector('.item3DropDown');
 const item4DropDown=document.querySelector('.item4DropDown');
 const item5DropDown=document.querySelector('.item5DropDown');
 
-let deslogado=1
+let deslogado=3
 
 function mudarNav(){
   
-    menuNavbar.classList.toggle('logado');
-    loginNavbar.classList.toggle('logado');
-    registrarNavbar.classList.toggle('logado');
 
+    //  Navbar quando a o usuario estiver deslogado
     if (deslogado==1){
-        item5DropDown.classList.add('sumir');
+
         item1DropDown.innerText="Home";
         item2DropDown.innerText="Obras";
         item3DropDown.innerText="Perfil";
         item4DropDown.innerText="Como funciona";
+        item5DropDown.classList.add('sumir');
 
-        deslogado=2
-    } else{
-        item1DropDown.innerText="Login";
-        item2DropDown.innerText="Registrar-se";
-        item3DropDown.innerText="Obras";
-        item4DropDown.innerText="Como funciona";
 
+    // Navbar Quando o Empreiteiro Estiver Logado 
+    } else if(deslogado==2){
+        menuNavbar.classList.add('logado');
+        loginNavbar.classList.add('logado');
+        registrarNavbar.classList.add('logado');
+        
+        item1DropDown.innerText="Obras";
+        item2DropDown.innerText="Home";
+        item3DropDown.innerText="Como funciona";
+        item4DropDown.innerText="Contato Wpp";
+        item5DropDown.innerText="Sair";
         item5DropDown.classList.remove('sumir');
       
-        deslogado=1
+    
+        // Navbar Admin
+    } else if(deslogado==3){
+        menuNavbar.classList.add('logado');
+        loginNavbar.classList.add('logado');
+        registrarNavbar.classList.add('logado');
+
+        item1DropDown.innerText="Item1Admin";
+        item2DropDown.innerText="Item2Admin";
+        item3DropDown.innerText="Item3Admin";
+        item4DropDown.innerText="Item4Admin";
+        item5DropDown.innerText="Sair";
+        item5DropDown.classList.remove('sumir');
     }
+
+
 
     
     console.log(deslogado)
