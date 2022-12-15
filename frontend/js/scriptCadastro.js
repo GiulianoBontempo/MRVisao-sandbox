@@ -16,6 +16,8 @@ const bullet = [...document.querySelectorAll(".step .bullet")];
 let max = 4;
 let current = 1;
 
+slidePage.style.marginLeft = "0%";
+
 // Define as alterações que ocorrem quando o botão da primeira página é clicado
 nextBtnFirst.addEventListener("click", function(){
   slidePage.style.marginLeft = "-25%";

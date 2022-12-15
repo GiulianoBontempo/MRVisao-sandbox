@@ -16,16 +16,16 @@
 
     
 
-    <div class="container justify-content-center align-items-center">
+    <div class="container justify-content-center align-items-center" id="formInsere">
 
-        <form name="form1" method="post" action="/insereObra">
+        <!-- <form name="form1" method="post" action="/insereServico">
               <h2>Inserir Serviço</h2>
               <div class="input">
-                  NOME: <input type="text" name="nome" value="" required>
+                  Tipo: <input type="text" name="tipo" value="" required>
               </div>
               <br>
               <div class="input">
-                  ENDEREÇO: <input type="text" name="endereco" value="" required>
+                  Descrição: <input type="text" name="descricao" rows="" value="" required>
               </div>
               <br>
               <div class="input">
@@ -37,30 +37,38 @@
               </div>
               <br>
               <div class="input">
-                  DESCRIÇÃO: <input type="text" name="descricao" rows="" value="" required>
+                <input type="submit" value="INSERIR">
+              </div>
+          </form> -->
+      
+      </div>
+    
+    <script>
+        let parametroURL = new URLSearchParams(window.location.search)
+        let obra_id = parametroURL.get('obra_id')
+
+        document.getElementById("formInsere").innerHTML =`<form name="form1" method="post" action="/insereServico?obra_id=${obra_id}">
+              <h2>Inserir Serviço</h2>
+              <div class="input">
+                  Tipo: <input type="text" name="tipo" value="" required>
+              </div>
+              <br>
+              <div class="input">
+                  Descrição: <input type="text" name="descricao" rows="" value="" required>
+              </div>
+              <br>
+              <div class="input">
+                  DATA-INICIO: <input type="date" name="dataInicio" value="" required>
+              </div>
+              <br>
+              <div class="input">
+                  DATA-FIM: <input type="date" name="dataFim" value="" required>
               </div>
               <br>
               <div class="input">
                 <input type="submit" value="INSERIR">
               </div>
-          </form>
-      
-      </div>
-    <!--
-    <form name="form1" method="post" action="/insereServico?obra_id=5">
-        Tipo: <input type="text" name="tipo" value="" required>
-        <br>
-        DATA-INICIO: <input type="date" name="dataInicio" value="" required>
-        <br>
-        DATA-FIM: <input type="date" name="dataFim" value="" required>
-        <br>
-        DESCRIÇÃO: <input type="text" name="descricao" value="" required>
-        <br>
-        <input type="submit" value="INSERIR">
-    </form> -->
-    <script>
-        let parametroURL = new URLSearchParams(window.location.search)
-        let obra_id = parametroURL.get('obra_id')
+          </form>`
 
         console.log(obra_id)
 

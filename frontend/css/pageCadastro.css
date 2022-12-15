@@ -41,7 +41,7 @@ body{
 
 /* Proibe o scroll down na parte exterior do form */
 .container .form-outer{
-  width: 100%;
+  width: 80%;
   overflow: hidden;
 }
 

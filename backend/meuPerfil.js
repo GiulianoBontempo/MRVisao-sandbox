@@ -66,7 +66,6 @@ fetch('/usuario')
                 perfil = perfis
             }
         })
-        
         document.getElementById("nome_do_empreiteiro").innerHTML = `<h2>${perfil.nomeFantasia}</h2>`
         document.getElementById("nome_da_empreiteira").innerHTML = `<p>${perfil.nomeFantasia}</p>`
         document.getElementById("CPF").innerHTML = `<p>CNPJ: ${perfil.cnpj}</p>`

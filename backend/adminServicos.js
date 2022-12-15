@@ -4,6 +4,7 @@ let parametroURL = new URLSearchParams(window.location.search)
 let obra_id = parametroURL.get('obra_id')
 
 let statusFiltro
+let saidaModal = ""
 
 
 function getStatusServico() {
@@ -11,18 +12,17 @@ function getStatusServico() {
     const statusServico = select.options[select.selectedIndex].text;
     statusFiltro = statusServico
     console.log(statusFiltro)
-    document.getElementById("tabelaServicos").innerHTML = ''
     
     // window.location.href = '/frontend/homeAdmin.html'
     // fetch('/servicosObraId?obra_id=' + obra_id)
     //     .then((response) => {
-    //         return response.json();
-    //     })
-    //     .then((data) => {
-    //         servicos = data;
-    //         servicos.map(function (servicos) {
-    //             document.getElementById("tabelaServicos").innerHTML +=
-    //             `<tr>
+        //         return response.json();
+        //     })
+        //     .then((data) => {
+            //         servicos = data;
+            //         servicos.map(function (servicos) {
+                //             document.getElementById("tabelaServicos").innerHTML +=
+                //             `<tr>
     //                 <th scope="row">${servicos.servico_id}</th>
     //                 <td>${servicos.tipo}</td>
     //                 <td>${servicos.descricao}</td>
@@ -33,43 +33,42 @@ function getStatusServico() {
     //         })
     //     })
 
-
+    
 
     fetch(`/servicosStatus?statusServico=${statusFiltro}&obra_id=${obra_id}`)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            servicos = data;
-
-
-
-            const elemento1 = document.getElementById("elemento1");
-            const elemento2 = document.getElementById("elemento2");
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        servicos = data;
+        
+        const elemento1 = document.getElementById("elemento1");
+        const elemento2 = document.getElementById("elemento2");
+        
+        if(statusFiltro == 'Em andamento') {
+            elemento1.textContent = "Cancelar"
+            elemento2.textContent = "Concluir"
+            // document.getElementById("tabelaHead").innerHTML += `<th scope="col" class="flexivel">Cancelar</th>
+            // <th scope="col" class="flexivel">Concluir</th>`
             
-            if(statusFiltro == 'Em andamento') {
-                elemento1.textContent = "Cancelar"
-                elemento2.textContent = "Concluir"
-                // document.getElementById("tabelaHead").innerHTML += `<th scope="col" class="flexivel">Cancelar</th>
-                // <th scope="col" class="flexivel">Concluir</th>`
-                
-            }
-            else if (statusFiltro == 'Cancelado') {
-                elemento1.textContent = "Reativar"
+        }
+        else if (statusFiltro == 'Cancelado') {
+            elemento1.textContent = "Reativar"
                 elemento2.textContent = "Concluir"
                 // document.getElementById("tabelaHead").innerHTML += `<th scope="col" class="flexivel">Reativar</th>
                 // <th scope="col" class="flexivel">Concluir</th>`
                 
             }
-            else {
-
-                elemento1.textContent = "Cancelar"
-                elemento2.textContent = "Reativar"
-                // document.getElementById("tabelaHead").innerHTML += `<th scope="col" class="flexivel">Cancelar</th>
-                // <th scope="col" class="flexivel">Reativar</th>`
-            }
-
-
+        else {
+            
+            elemento1.textContent = "Cancelar"
+            elemento2.textContent = "Reativar"
+            // document.getElementById("tabelaHead").innerHTML += `<th scope="col" class="flexivel">Cancelar</th>
+            // <th scope="col" class="flexivel">Reativar</th>`
+        }
+            
+            document.getElementById("tabelaServicos").innerHTML = ''
+            
             servicos.map(function (servicos) {
                 if(statusFiltro == 'Em andamento'){
                     document.getElementById("tabelaServicos").innerHTML +=
@@ -86,7 +85,6 @@ function getStatusServico() {
                     document.getElementById("entradaModal").innerHTML = saidaModal
                 }
                 else if (statusFiltro == 'Cancelado') {
-                    document.getElementById("Cancelar").text = 'Reativar'
                     document.getElementById("tabelaServicos").innerHTML +=
                     `<tr>
                     <th scope="row">${servicos.servico_id}</th>
@@ -98,15 +96,14 @@ function getStatusServico() {
                     </tr>`
                 }
                 else {
-                    document.getElementById("Concluir").text = 'Reativar'
                     document.getElementById("tabelaServicos").innerHTML +=
                     `<tr>
                     <th scope="row">${servicos.servico_id}</th>
                     <td>${servicos.tipo}</td>
                     <td>${servicos.descricao}</td>
                     <td class="tdImgs"><a href = "editarservico.html?servico_id=${servicos.servico_id}"><img src="../imgs/editar.png" alt=""></td></a>
-                    <td class="tdImgs"><a href = "/atualizaStatusservico?status=Cancelado&servico_id=${servicos.servico_id}"><img id = "imgCancelar" src="../imgs/cancelar (1).png" alt=""></a></td>
-                    <td class="tdImgs"><a href = "/atualizaStatusservico?status=Em andamento&servico_id=${servicos.servico_id}"><img id = "imgAtivar" src="../imgs/contrato.png" alt=""></a></td>
+                    <td class="tdImgs"><a href = "/atualizaStatusServico?status=Cancelado&servico_id=${servicos.servico_id}"><img id = "imgCancelar" src="../imgs/cancelar (1).png" alt=""></a></td>
+                    <td class="tdImgs"><a href = "/atualizaStatusServico?status=Em andamento&servico_id=${servicos.servico_id}"><img id = "imgAtivar" src="../imgs/contrato.png" alt=""></a></td>
                     </tr>`
 
                 }

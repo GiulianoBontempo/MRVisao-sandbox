@@ -14,9 +14,9 @@
 
 <body>
 
-    
+    <h2>Editar Serviço</h2>
 
-    <div id="formEditar">
+    <div class="container justify-content-center align-items-center" id="formEditar">
         
     </div>
     <!--
@@ -47,15 +47,15 @@
                     console.log(servico.tipo)
                     document.getElementById("formEditar").innerHTML = `
                         <form name="form1" method="post" action="/atualizaServico?servico_id=${servico.servico_id}">
-                            Tipo: <input type="text" name="tipo" value="${servico.tipo}" required>
+                            <div class="input" >Tipo: <input type="text" name="tipo" value="${servico.tipo}" required></div>
                             <br>
-                            DATA-INICIO: <input type="date" name="dataInicio" value="${servico.dataInicio}" required>
+                            <div class="input" >DATA-INICIO: <input type="date" name="dataInicio" value="${servico.dataInicio}" required></div>
                             <br>
-                            DATA-FIM: <input type="date" name="dataFim" value="${servico.dataFim}" required>
+                            <div class="input" >DATA-FIM: <input type="date" name="dataFim" value="${servico.dataFim}" required></div>
                             <br>
-                            DESCRIÇÃO: <input type="text" name="descricao" value="${servico.descricao}" required>
+                            <div class="input" >DESCRIÇÃO: <input type="text" name="descricao" value="${servico.descricao}" required></div>
                             <br>
-                            <input type="submit" value="INSERIR">
+                            <div class="input" ><input type="submit" value="INSERIR"></div>
                         </form>`
 
                 })

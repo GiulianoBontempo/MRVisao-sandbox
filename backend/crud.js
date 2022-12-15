@@ -406,7 +406,7 @@ app.post('/insereServico', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
     var db = new sqlite3.Database(DBPATH); // Abre o banco
-    sql = "INSERT INTO servicos (obra_id, tipo, dataInicio, dataFim, descricao) VALUES ('" + req.query.obra_id + "', '" + req.body.tipo + "', '" + req.body.dataInicio + "', '" + req.body.dataFim + "', '" + req.body.descricao + "')";
+    sql = "INSERT INTO servicos (obra_id, tipo, descricao, dataInicio, dataFim ) VALUES ('" + req.query.obra_id + "', '" + req.body.tipo + "', '" + req.body.descricao + "', '" + req.body.dataInicio + "', '" + req.body.dataFim + "')";
     console.log(sql);
     db.run(sql, [], err => {
         if (err) {

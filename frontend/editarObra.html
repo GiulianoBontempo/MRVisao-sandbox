@@ -13,6 +13,8 @@
 
 <body>
 
+    <h2>Editar Obra</h2>
+
     <div id="formEditar"></div>
     
 
@@ -33,17 +35,17 @@
                     console.log(obra.nome)
                     document.getElementById("formEditar").innerHTML = `
                         <form name="form1" method="post" action="/atualizaObra?obra_id=${obra.obra_id}">
-                            NOME: <input type="text" name="nome" value="${obra.nome}" required>
+                            <div class="input" >NOME: <input type="text" name="nome" value="${obra.nome}" required></div>
                             <br>
-                            ENDEREÇO: <input type="text" name="endereco" value="${obra.endereco}" required>
+                            <div class="input" >ENDEREÇO: <input type="text" name="endereco" value="${obra.endereco}" required></div>
                             <br>
-                            DATA-INICIO: <input type="date" name="dataInicio" value="${obra.dataInicio}" required>
+                            <div class="input" >DATA-INICIO: <input type="date" name="dataInicio" value="${obra.dataInicio}" required></div>
                             <br>
-                            DATA-FIM: <input type="date" name="dataFim" value="${obra.dataFim}" required>
+                            <div class="input" >DATA-FIM: <input type="date" name="dataFim" value="${obra.dataFim}" required></div>
                             <br>
-                            DESCRIÇÃO: <input type="text" name="descricao" value="${obra.descricao}" required>
+                            <div class="input" >DESCRIÇÃO: <input type="text" name="descricao" value="${obra.descricao}" required></div>
                             <br>
-                            <input type="submit" value="INSERIR">
+                            <div class="input" ><input type="submit" value="INSERIR"></div>
                         </form>`
 
                 })
