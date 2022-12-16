@@ -1,7 +1,7 @@
 /*No Body, setamos a cor de fundo e a fonte base da página*/
 
 body {
-    background-color: #DAD9D9;
+    background-color: #ffffff;
     font-family: Verdana;
 }
 
@@ -18,7 +18,7 @@ body {
 /* O objetivo do estilo a seguir é setar a cor de fundo, a largura da div e um margin para centralizá-la*/
 
 #retangulo_Maior {
-    background-color: rgb(243, 250, 245);
+    background-color: rgb(255, 255, 255);
     width: 90%;
     margin-left: 5%;
     padding-bottom: 0.01%;

@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/pageCadastro.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <script src=""></script>
   </head>
   <body>
@@ -45,7 +46,11 @@
 
 
     <div class="container">
+      <button class="btnSair" onclick="sairDoCadastro()"> 
+        <span class="material-icons">close</span>
+    </button>
       <header>Cadastro</header>
+
       <!-- Aqui está a barra de progresso -->
       <div class="progress-bar">
         <!-- Aqui está a primeira etapa, empreiteira -->
@@ -89,31 +94,31 @@
             <div class="title">Informação básica:</div>
             <div class="field">
               <div class="label">Nome Fantasia</div>
-              <input type="text" name="nome">
+              <input id="nome1Etapa" type="text" name="nome">
             </div>
             <div class="field">
-              <div class="label">CNPJ</div>
-              <input type="text" name="cnpj">
+              <div   class="label">CNPJ</div>
+              <input id="cnpj" type="text" name="cnpj">
             </div>
             <div class="field">
-              <button type="button" class="firstNext next">Próximo</button>
+              <button type="button" onclick="verificar1Etapa()" class="firstNext next">Próximo</button>
             </div>
           </div>
 
           <!-- Página de contato -->
-          <div class="page">
+          <div id="page1" class="page">
             <div class="title">Informações de contato</div>
             <div class="field">
               <div class="label">Seu Nome Completo</div>
-              <input type="text" name="nome_empreiteiro">
+              <input id="nomeCompleto" type="text" name="nome_empreiteiro">
             </div>
             <div class="field">
-              <div class="label">Número de telefone</div>
-              <input type="Number" name="contato">
+              <div  class="label">Número de telefone</div>
+              <input id="telEmpresa" type="text" name="contato">
             </div>
             <div class="field btns">
-              <button class="prev-1 prev">Anterior</button>
-              <button type="button" class="next-1 next">Próximo</button>
+              
+              <button type="button" onclick="verificar2Etapa()" class="next-1 next">Próximo</button>
             </div>
           </div>
           
@@ -142,21 +147,68 @@
             <div class="title">Detalhes de login:</div>
             <div class="field">
               <div class="label">Email</div>
-              <input type="text" name="email">
+              <input id="email" type="text" name="email">
             </div>
             <div class="field">
               <div class="label">Senha</div>
-              <input type="password" name="senha">
+              <input id="senha" type="password" name="senha">
             </div>
             <div class="field btns">
-              <button class="prev-3 prev">Anterior</button>
-              <button type="submit" class="submit">Enviar</button>
+              
+              <button type="submit" onclick="verificar3Etapa() "class="submit">Enviar</button>
             </div>
           </div>
         </form>
       </div>
     </div>
-    <script src="js/joao.js"></script>
+
+    <script>
+      const cnpj = document.getElementById('cnpj')
+
+      cnpj.addEventListener('keypress', () => {
+        let cnpjlength = cnpj.value.length
+        let cnpjFinal
+      
+        if (cnpjlength === 2 || cnpjlength === 6) {
+          cnpj.value += "."
+        } else if (cnpjlength === 10) {
+          cnpj.value += "/"
+        } else if (cnpjlength === 15) {
+          cnpj.value += "-"
+        } else if (cnpjlength === 18) {
+          cnpj.value = cnpj.value.substr(0,17)
+        } 
+        else if (cnpjlength === 19) {
+          cnpj.value = cnpj.value.substr(0,17)
+
+        }
+
+      })
+      
+      const tel = document.getElementById('telEmpresa')
+      
+      tel.addEventListener('keypress', () => {
+        let tel_length = tel.value.length
+      
+        if (tel_length === 0) {
+          tel.value += "("
+        } else if (tel_length === 3) {
+          tel.value += ") "
+        } else if (tel_length === 6) {
+          tel.value += " "
+        } else if (tel_length === 11) {
+          tel.value += "-"
+        } else if (tel_length === 16) {
+          tel.value = tel.value.substr(0,15)
+        } 
+        else if (tel_length === 17) {
+          tel.value = tel.value.substr(0,15)
+
+        }
+      })
+    </script>
+
+    <!-- <script src="js/joao.js"></script> -->
     <script src="js/scriptCadastro.js"></script>
     
   </body> 

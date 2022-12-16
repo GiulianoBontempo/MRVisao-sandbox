@@ -2,8 +2,20 @@
     display: flex;
     padding: 30px;
     width: 750px;
-    background: #009578;
+    background: #006B3F;
     border-radius: 5px;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 300px;
+    padding-top: auto;
+    overflow-y: hidden;
+
 }
 
 .kanban * {

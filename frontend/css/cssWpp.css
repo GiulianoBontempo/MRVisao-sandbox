@@ -231,5 +231,33 @@ font-size: 150%;
 
 }
 
+@media (max-width:1160px){
 
+    .titulo{
+        width:80%;
+    }
+
+    .titulo select{
+        width:60%;
+    }
+    .wpp{
+        width: 80%;
+    }
+
+    .wpp button{
+        font-size: 80%;
+        padding: 1%;
+        border-radius: 5px;
+        margin-top: 2%;
+        background-color: lightgrey;
+        transition:5s;
+        margin-left:15%;
+        animation:piscaPisca 5s infinite;
+        width:50%;
+        height:40%;
+    }
+
+
+
+    }
 

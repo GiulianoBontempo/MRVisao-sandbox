@@ -1,5 +1,6 @@
 body {
     background-color: white;
+
 }
 
 #retangulo_maior {
@@ -13,6 +14,7 @@ body {
 #primeira_linha {
     margin-bottom: 3%;
     margin-top: 3%;
+    width: 100%;
 }
 
 #Meus_Projetos {
@@ -29,6 +31,7 @@ body {
 
 .row.align-items-center {
     height: 100%;
+
 }
 
 .offset-2.col-3 {
@@ -53,6 +56,7 @@ p {
     height: 100%;
     padding: 10px;
     border: 3px solid black;
+    margin-left: 10%;
 }
 
 #filtro {
@@ -80,6 +84,7 @@ select {
 }
 
 #botaoFiltrar {
+
     border: none;
     border-radius: 5%;
     margin-left: 5px;
@@ -105,7 +110,8 @@ p.col-8 {
 }
 
 table {
-    margin-left: 3%;
+    /* margin-left: 3%; */
+    padding-left: 5px;
 }
 
 thead {
@@ -136,7 +142,32 @@ table img {
     background-color: #00000000;
 }
 
+@media (max-width:940px){
 
+    #botaoFiltrar {
+        width: 80px;
+        border: none;
+        border-radius: 5%;
+        margin-top: 10px;
+        background-color: #FFB719;
+        color: rgb(0, 0, 0);
+        font-size: 15;
+        font-weight: 600;
+        padding: 10px;
+    }
+    #filtroStatus{
+        width:330px;
+        font-weight:600 ;
+        font-size: 65%;
+    }
+
+
+    #botao_adiciona_obra {
+        background-color: #00D38D;
+        width: 100px;
+        height: 50px;
+    }
+}
 
 
 

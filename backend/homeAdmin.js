@@ -1,10 +1,8 @@
-
-
 function redirecionaAdicionaObra() {
     window.location.href = 'inserir.html'
 }
 
-let statusFiltro
+let statusFiltro;
 
 function getStatusObra() {
     const select = document.getElementById('filtroStatus');
@@ -22,6 +20,8 @@ function getStatusObra() {
     })
     .then((data) => {
         obras = data;
+        const lista = document.getElementById("obrasComStatus");
+        let saidaOpcoes ='';
         const elemento1 = document.getElementById("elemento1");
         const elemento2 = document.getElementById("elemento2");
         
@@ -52,6 +52,9 @@ function getStatusObra() {
         // document.getElementById("tabelaHead").innerHTML += `<th scope="col" class="flexivel">Reativar</th>
         // <th scope="col" class="flexivel">Concluir</th>`
             obras.map(function (obras) {
+
+
+                saidaOpcoes += '<option value="'+ `${obras.nome}` + '"></option>'
 
 
                 if(statusFiltro == 'Em andamento'){
@@ -97,10 +100,10 @@ function getStatusObra() {
                 }
             })
             
-        
             
+            lista.innerHTML = saidaOpcoes;
         })
-    
+
 }
 
 // let statusFiltro = trocaStatus()
@@ -122,9 +125,61 @@ fetch('/cookiesAdmin')
 
 getStatusObra();
 
+function filtroPesquisa(){
+    const inputPesquisa = document.getElementById("inputPesquisa").value;
+    fetch(`/obrasStatus?statusObra=${statusFiltro}`)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        obras = data;
+        obras.map(function(obras){
+            if (obras.nome === inputPesquisa){
+                if(statusFiltro == 'Em andamento'){
 
+                    document.getElementById("tabelaBody").innerHTML =
+                    `<tr>
+                    <th scope="row">${obras.obra_id}</th>
+                    <td>${obras.nome}</td>
+                    <td>${obras.endereco}</td>
+                    <td class="tdImgs"><a href = "adminServicos.html?obra_id=${obras.obra_id}" id = "servicos"><img id="imgServicos" src="../imgs/servico.png" alt=""></a></td>
+                    <td class="tdImgs"><a href = "editarObra.html?obra_id=${obras.obra_id}"><img src="../imgs/editar.png" alt=""></td></a>
+                    <td class="tdImgs"><a href = "/atualizaStatusObra?status=Cancelado&obra_id=${obras.obra_id}"><img id = "imgCancelar" src="../imgs/cancelar (1).png" alt=""></a></td>
+                    <td class="tdImgs"><a href = "/atualizaStatusObra?status=Concluido&obra_id=${obras.obra_id}"><img id = "imgConcluir" src="../imgs/verifica (1).png" alt=""></a></td>
+                    </tr>`
+                }
+                else if (statusFiltro == 'Cancelado') {
+                    
+                    document.getElementById("tabelaBody").innerHTML =
+                    `<tr>
+                    <th scope="row">${obras.obra_id}</th>
+                    <td>${obras.nome}</td>
+                    <td>${obras.endereco}</td>
+                    <td class="tdImgs"><a href = "adminServicos.html?obra_id=${obras.obra_id}" id = "servicos"><img id="imgServicos" src="../imgs/servico.png" alt=""></a></td>
+                    <td class="tdImgs"><a href = "editarObra.html?obra_id=${obras.obra_id}"><img src="../imgs/editar.png" alt=""></td></a>
+                    <td class="tdImgs"><a href = "/atualizaStatusObra?status=Em andamento&obra_id=${obras.obra_id}"><img id = "imgAtivar" src="../imgs/contrato.png" alt=""></a></td>
+                    <td class="tdImgs"><a href = "/atualizaStatusObra?status=Concluido&obra_id=${obras.obra_id}"><img id = "imgConcluir" src="../imgs/verifica (1).png" alt=""></a></td>
+                    </tr>`
+                }
+                else {
 
+                    
+                    document.getElementById("tabelaBody").innerHTML =
+                    `<tr>
+                    <th scope="row">${obras.obra_id}</th>
+                    <td>${obras.nome}</td>
+                    <td>${obras.endereco}</td>
+                    <td class="tdImgs"><a href = "adminServicos.html?obra_id=${obras.obra_id}" id = "servicos"><img id="imgServicos" src="../imgs/servico.png" alt=""></a></td>
+                    <td class="tdImgs"><a href = "editarObra.html?obra_id=${obras.obra_id}"><img src="../imgs/editar.png" alt=""></td></a>
+                    <td class="tdImgs"><a href = "/atualizaStatusObra?status=Cancelado&obra_id=${obras.obra_id}"><img id = "imgCancelar" src="../imgs/cancelar (1).png" alt=""></a></td>
+                    <td class="tdImgs"><a href = "/atualizaStatusObra?status=Em andamento&obra_id=${obras.obra_id}"><img id = "imgAtivar" src="../imgs/contrato.png" alt=""></a></td>
+                    </tr>`
 
+                }
+            }
+        })
+    })
+}
 
 
 

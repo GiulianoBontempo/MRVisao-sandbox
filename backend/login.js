@@ -22,12 +22,12 @@ function validaLogin(){
                 if(admin.email == email_usuario) {
                     if(admin.senha == senha_usuario) {
                         window.location.href = '/login?admin_id=' + `${admin.admin_id}`
-                    }
-                    else{
+                    } else{
                         document.getElementById("erro").innerHTML = `<p class = "text-danger">Email ou senha incorretos.</p>`
                     }
                 }
                 else{
+                    let logou = false
                     fetch('/usuario')
                         .then((response) => {
                             return response.json();
@@ -39,24 +39,18 @@ function validaLogin(){
                                     usuario = usuarios
                                     if(usuario.senha == senha_usuario) {
                                         window.location.href = '/login?usuario_id=' + `${usuario.usuario_id}`
-                                        status_login = true;
+                                        logou = true;
                                     }
-                                    else {
-                                        document.getElementById("erro").innerHTML = `<p class = "text-danger">Email ou senha incorretos.</p>`
-                        
-                                    }
-                                }
-                                else {
-                                    document.getElementById("erro").innerHTML = `<p class = "text-danger">Email ou senha incorretos.</p>`
                                 }
                             })
+                            if (!(logou)){{}
+                            document.getElementById("erro").innerHTML = `<p class = "text-danger">Email ou senha incorretos.</p>`
+                            }
                         })
-                    
+                                
                 }
             })
 
         })
     
-
-
 }

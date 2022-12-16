@@ -14,12 +14,15 @@ export default class KanbanAPI { //classe para exportar a API
         return column.items;
     }
 
-    static insertItem(columnId, content) { // Inserir
+    static insertItem(columnId, nome, proposta, num) { // Inserir
         const data = read();
         const column = data.find(column => column.id == columnId);
         const item = {
             id: Math.floor(Math.random() * 100000),  // operação matemática pra devolver um ID aleatório
-            content
+            nome,
+            proposta,
+            num
+
         };
 
         if (!column) { // caso a coluna não existe, recebe erro

@@ -16,55 +16,54 @@
 
 <body>
 
-        <!-- Navbar -->
-        <header>
-          <nav>
-              <img id="fotoLogo" src="../imgs/MRVisão.png" onclick="voltarHome()">
-              <div class="menuNavbarGrande">
-                  <a class="menuNavbar" onclick="abrirMenu()">Menu</a>
-                  <a class="loginNavbar" href="login.html">Login</a>
-                  <a class="registrarNavbar" href="cadastro.html">Registrar-se</a>
-  
-  
-  
-              </div>
-  
-              <button class="btnDropDown">
-                  <span class="material-icons">menu</span>
-              </button>
-          </nav>  
-   
-  
-          <div id="menu" class="mobileMenu">
-              <a class="item1DropDown" href="home.html">Home</a>
-              <a class="item2DropDown" href="obras.html">Obras</a>
-              <a class="item3DropDown" href="comoFunciona.html">Como Funciona</a>
-              <a class="item4DropDown" href="cadastro.html">Registrar-se</a>
-              <a class="item5DropDown" href="login.html">Login</a>
-  
-  
+            <!-- Navbar -->
+    <header>
+      <nav>
+          <img id="fotoLogo" src="../imgs/MRVisão.png" onclick="voltarHome()">
+          <div class="menuNavbarGrande">
+              <a class="menuNavbar" onclick="abrirMenu()">Menu</a>
+              <a class="loginNavbar" href="login.html">Login</a>
+              <a class="registrarNavbar" href="cadastro.html">Registrar-se</a>
+
+
+
           </div>
-          <div class="modal" id="modalLogout" tab-index="-1" aria-labelledby="tituloDoModal" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="tituloDoModal">
-                    Logout
-                  </h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <p>Tem certeza que deseja se deslogar?</p>
-                </div>
-                <div class="modal-footer">
-                  <button id="botaoLogout" type="button" onclick="location.href = '../logout';" class="btn btn-primary">Logout</button>
-                </div>
-              </div>
+
+          <button class="btnDropDown">
+              <span class="material-icons">menu</span>
+          </button>
+      </nav>  
+
+
+      <div id="menu" class="mobileMenu">
+          <a class="item1DropDown" href="home.html">Home</a>
+          <a class="item2DropDown" href="obras.html">Obras</a>
+          <a class="item3DropDown" href="comoFunciona.html">Como Funciona</a>
+          <a class="item4DropDown" href="cadastro.html">Registrar-se</a>
+          <a class="item5DropDown" href="login.html">Login</a>
+
+
+      </div>
+      <div class="modal" id="modalLogout" tab-index="-1" aria-labelledby="tituloDoModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="tituloDoModal">
+                Logout
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Tem certeza que deseja se deslogar?</p>
+            </div>
+            <div class="modal-footer">
+              <button id="botaoLogout" type="button" onclick="location.href = '../logout';" class="btn btn-primary">Logout</button>
             </div>
           </div>
+        </div>
+      </div>
       
-        </header>
-
+    </header>
     <!-- A página consiste apenas em um accordion com função única e exclusiva informativa, de forma que a cada etapa clicada, será exibida ao usuário uma descrição da respectiva parte do projeto-->
 
 
@@ -97,7 +96,7 @@
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    Após filtrar os serviços que melhor atendam o seu perfil, se candidate a vaga de seu interesse
+                    Após filtrar os serviços que melhor atendam o seu perfil, se candidate a vaga de seu interesse.
                 </div>
               </div>
             </div>

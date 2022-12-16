@@ -1,6 +1,6 @@
 
 body {
-    background-color: #edecec;
+    background-color: #ffffff;
     font-family: Verdana;
 }
 
@@ -81,4 +81,6 @@ span{
 
 h1{
     font-size: xx-large;
+    text-align: center;
+    margin-right: 20%;
 }

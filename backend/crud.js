@@ -172,6 +172,20 @@ app.get('/usuario', (req, res) => {
     db.close(); // Fecha o banco
 });
 
+app.get('/usuarioId', (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    var db = new sqlite3.Database(DBPATH); // Abre o banco
+    var sql = 'SELECT * FROM usuarios WHERE usuario_id=' + req.query.usuario_id;
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        res.json(rows);
+    });
+    db.close(); // Fecha o banco
+});
+
 // Insere um registro (é o C do CRUD - Create)
 app.post('/insereUsuario', urlencodedParser, (req, res) => {
     res.statusCode = 200;
@@ -553,8 +567,8 @@ app.get('/login', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
     if(req.query.usuario_id){
-        let id = req.query.usuario_id;
-        res.cookie("id", id, {
+        let empreiteiro_id = req.query.usuario_id;
+        res.cookie("empreiteiro_id", empreiteiro_id, {
             httpOnly: true
         });
         res.redirect("../frontend/meuPerfil.html");
@@ -571,7 +585,14 @@ app.get('/login', urlencodedParser, (req, res) => {
 app.get('/logout', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.clearCookie("id");
+    res.clearCookie("empreiteiro_id");
+    res.redirect("../frontend/home.html");
+});
+
+app.get('/logoutAdmin', urlencodedParser, (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.clearCookie();
     res.redirect("../frontend/home.html");
 });
 
@@ -579,7 +600,7 @@ app.get('/cookies', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
     if(req.headers.cookie){
-        if(req.headers.cookie.includes("id")){
+        if(req.headers.cookie.includes("empreiteiro_id")){
             res.json(req.headers.cookie);
         } else{
             res.json("deslogado");
@@ -593,7 +614,7 @@ app.get('/cookiesAdmin', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
     if(req.headers.cookie){
-        if(req.headers.cookie.includes("admin_id")){
+        if(req.headers.cookie.includes("admin")){
             res.json(req.headers.cookie);
         } else{
             res.json("deslogado");
@@ -601,4 +622,18 @@ app.get('/cookiesAdmin', urlencodedParser, (req, res) => {
     } else{
         res.json("deslogado");
     }
+});
+
+app.get('/candidaturasServicoId', (req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    var db = new sqlite3.Database(DBPATH); // Abre o banco
+    var sql = 'SELECT * FROM candidaturas WHERE servico_id=' + req.query.servico_id;
+    db.all(sql, [], (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        res.json(rows);
+    });
+    db.close(); // Fecha o banco
 });

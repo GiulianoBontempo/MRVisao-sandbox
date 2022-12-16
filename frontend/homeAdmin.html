@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/meuPerfil.css">
+    <link rel="stylesheet" href="css/cssNavbar.css">
     <!-- <link rel="stylesheet" href="css/home&meuPerfil.css"> -->
     <link rel="stylesheet" href="css/homeAdmin.css">
     <script src="../backend/homeAdmin.js"></script>
@@ -16,7 +18,6 @@
 </head>
 
 <body onload="getStatusObra()">
-
     <!-- A lógica do código é baseada em diversas div's sucessivas com container, row e col, a fim de organizar a disposição dos elementos na página -->
 
     <div class="container align-items-center" id="retangulo_maior">
@@ -25,9 +26,10 @@
 
         <div class="row justify-content-center align-items-center" id="primeira_linha">
             <div class="col-3 rounded-4" id="barra_de_pesquisa">
-                <input type="text" class="rounded-4" placeholder="Buscar" id="inputPesquisa">
+                <input type="text" class="rounded-4" placeholder="Buscar" id="inputPesquisa" list="obrasComStatus">
+                <datalist id="obrasComStatus"></datalist>
                 <!-- <img class="col-2" src="../imgs/lupa (1).png" alt=""> -->
-                <ion-icon name="search-outline"></ion-icon>
+                <ion-icon name="search-outline" onclick="filtroPesquisa()"></ion-icon>
             </div>
             <!-- <div class="offset-1 col-1" id="ordenar">
                 <div class="row align-items-center">

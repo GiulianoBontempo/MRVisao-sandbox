@@ -1,8 +1,9 @@
 import DropZone from "./DropZone.js";
 import KanbanAPI from "../api/KanbanAPI.js";
+import { response } from "express";
 
 export default class Item {
-    constructor(id, content) {
+    constructor(id, nome, proposta, num) {
         const bottomDropZone = DropZone.createDropZone();
 
         this.elements = {};
@@ -10,6 +11,9 @@ export default class Item {
         this.elements.input = this.elements.root.querySelector(".kanban__item-input");
 
         this.elements.root.dataset.id = id;
+        this.elements.root.dataset.nome = nome;
+        this.elements.root.dataset.proposta = proposta;
+        this.elements.root.dataset.num = num;
         this.elements.input.textContent = content;
         this.content = content;
         this.elements.root.appendChild(bottomDropZone);
@@ -31,6 +35,10 @@ export default class Item {
         this.elements.input.addEventListener("blur", onBlur);
         this.elements.root.addEventListener("dblclick", () => {
             const check = confirm("Are you sure you want to delete this item?");
+
+
+            //logica de cria é aqui de puxar nome e proposta para o servico
+
 
             if (check) {
                 KanbanAPI.deleteItem(id);
@@ -60,4 +68,6 @@ export default class Item {
 			</div>
 		`).children[0];
     }
+
 }
+

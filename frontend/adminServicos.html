@@ -23,8 +23,9 @@
 
         <div class="row justify-content-center align-items-center" id="primeira_linha">
             <div class="col-3 rounded-4" id="barra_de_pesquisa">
-                <input type="text" class="rounded-4" placeholder="Buscar" id="inputPesquisa">
-                <ion-icon name="search-outline"></ion-icon>
+                <input type="text" class="rounded-4" placeholder="Buscar" id="inputPesquisa" list="servicosComStatus">
+                <datalist id="servicosComStatus"></datalist>
+                <ion-icon name="search-outline" onclick="filtroPorPesquisa()"></ion-icon>
             </div>
             <div class="col-3" id="filtro">
                 <div class="row align-items-center">
@@ -54,7 +55,8 @@
                 <tr>
                     <th scope="col">Número</th>
                     <th scope="col">Tipo</th>
-                    <th scope="col">Empreiteiro</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Kanban</th>
                     <th scope="col">Editar</th>
                     <th scope="col" id="elemento1">Cancelar</th>
                     <th scope="col" id="elemento2">Concluir</th>
