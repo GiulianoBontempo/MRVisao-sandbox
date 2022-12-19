@@ -1,12 +1,16 @@
+/* <<<< ==== CCS DA PÁGINA DE OBRAS ==== >>>>> */
+
+
 /* Edita o corpo do documento e passa características como a fonte para seus filhos */
-body{
+body {
     background-color: white;
     width: 100vw;
     font-family: Verdana;
     height: 100%;
     overflow: hidden;
 }
-.botao{
+
+.botao {
 
     border: none;
     border-radius: 5%;
@@ -19,15 +23,15 @@ body{
 }
 
 /* Serve para remover o padding e border de elementos */
-.noPadding{
+.noPadding {
     padding: 0;
     border: 0;
     font-size: 0;
-    
+
 }
 
 /* Classe relativa a estilização do título das obras */
-.tituloObra{
+.tituloObra {
     font-size: 1.5vw;
     color: white;
     padding: 0;
@@ -38,7 +42,7 @@ body{
 }
 
 /* Classe relativa a estilização dos detalhes das obras */
-.detalhesObra{
+.detalhesObra {
     font-size: 1vw;
     color: white;
     padding: 0;
@@ -48,42 +52,42 @@ body{
 }
 
 /* Transforma a cor de fundo de elementos no verde definido no guia de estilos */
-.green{
+.green {
     background-color: #079d56;
 }
 
 /* Edita propriedades da classe card do bootstrap */
-.card{
+.card {
     width: 90%;
     margin: auto;
 }
 
 /* Classe relativa ao texto dos labels dos selects de filtragem */
-.textoFiltros{
+.textoFiltros {
     padding: 0;
     border: 0;
     margin: 0;
 }
 
 /* Classe relativa a estilização de links, mais especificamente, removendo o underline */
-.linkIndecorado{
+.linkIndecorado {
     text-decoration: none;
 }
 
 /* Define as cores dos labels dos filtros */
-.labelFiltros{
+.labelFiltros {
     color: white;
 }
 
 /* Estiliza a divisória que mostra as obras */
-#nomesDasObras{
+#nomesDasObras {
     margin: auto;
     width: 95%;
     height: 73.8vh;
 }
 
 /* Estiliza a divisória que contem os filtros */
-#divFiltros{
+#divFiltros {
     display: flexbox;
     padding-bottom: 1vh;
     padding-top: 0vh;
@@ -94,22 +98,22 @@ body{
 }
 
 /* Estiliza a navbar */
-#navBar{
+#navBar {
     background-color: #FFB719;
 }
 
 /* Estiliza o texto da esquerda da nav bar */
-.textoDireita{
+.textoDireita {
     text-align: right;
 }
 
 /* Estiliza o texto central da navbar */
-.textoCentro{
+.textoCentro {
     text-align: center;
     margin-top: 2vh;
 }
 
 /* Classe para tornar elementos arrendodados. Atua nos cards e nas imagens das obras */
-.arredondado{
+.arredondado {
     border-radius: 15px;
 }

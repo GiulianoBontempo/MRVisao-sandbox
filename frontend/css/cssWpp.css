@@ -1,7 +1,11 @@
+/* <<<< ==== CCS DA PÁGINA DE WHATSAPP ==== >>>>> */
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-*{
-    margin:0;
-    padding:0;
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 
@@ -9,11 +13,11 @@
 }
 
 
- /*Navbar*/
-nav{
-    position:relative;
-    z-index:99;
-    display:flex;
+/*Navbar*/
+nav {
+    position: relative;
+    z-index: 99;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     background-image: linear-gradient(to left, rgba(0, 107, 63, 0.9), rgb(41, 161, 105));
@@ -22,242 +26,258 @@ nav{
 
 }
 
-nav h1{
+nav h1 {
     letter-spacing: 3px;
     padding: 0.5rem 1rem;
     padding-right: 5px;
     transition: 2s;
-    color:#FFFF8F;
+    color: #FFFF8F;
     animation: mudarcor 10s infinite;
 }
 
 
-.menuNavbar{
-cursor: pointer;
+.menuNavbar {
+    cursor: pointer;
 }
-.menuNavbar.logado{
-    font-size:150%;
+
+.menuNavbar.logado {
+    font-size: 150%;
     margin-left: 60%;
 }
-.loginNavbar.logado{
-    display:none;
+
+.loginNavbar.logado {
+    display: none;
 
 }
-.registrarNavbar.logado{
-    display:none;
-}
-.deslogado3.logado{
-    display:none;
+
+.registrarNavbar.logado {
+    display: none;
 }
 
+.deslogado3.logado {
+    display: none;
+}
 
 
-.menuNavbarGrande{
-    display:none;
+
+.menuNavbarGrande {
+    display: none;
     align-items: center;
-    height:80px;
+    height: 80px;
 
     width: 60%;
 }
 
-.menuNavbarGrande a{
+.menuNavbarGrande a {
 
-    color:white;
+    color: white;
     text-decoration: none;
     transition: 0.6s;
-    margin-left:20%;
+    margin-left: 20%;
     font-size: 115%;
 
 }
 
-.menuNavbarGrande a:hover{
-    color:black;
-    background-color:rgb(255, 255, 255) ;
+.menuNavbarGrande a:hover {
+    color: black;
+    background-color: rgb(255, 255, 255);
     padding: 3%;
     border-radius: 6px;
 
 }
 
-.btnDropDown:hover{
+.btnDropDown:hover {
     transform: scale(1.2);
 
 }
-.btnDropDown{
+
+.btnDropDown {
     transition: 1s;
     appearance: none;
-    outline:none;
-    border:none;
+    outline: none;
+    border: none;
     background: none;
     cursor: pointer;
-    display:block;
+    display: block;
     width: 2rem;
-    height:2rem;
+    height: 2rem;
 }
 
-.btnDropDown span{
-    color:black;
+.btnDropDown span {
+    color: black;
     font-size: 2rem;
 }
 
-.mobileMenu{
+.mobileMenu {
     position: fixed;
-    top:0;
+    top: 0;
     width: 100%;
     height: 100%;
-    z-index:98;
+    z-index: 98;
     padding-top: 6rem;
     opacity: 0;
     transform: translateY(-100%);
     background-color: black;
-    color:red;
+    color: red;
     transition: 0.3s;
 
 
 }
 
-.mobileMenu.is-open{
+.mobileMenu.is-open {
     opacity: 1;
-    transform:translateY(0);
+    transform: translateY(0);
 
 }
 
 
-.mobileMenu a{
-    display:block;
+.mobileMenu a {
+    display: block;
     padding: 1rem;
-    color:white;
+    color: white;
     text-decoration: none;
     text-align: center;
     font-size: 1.2rem;
     transition: 1s;
 }
 
-.mobileMenu a.sumir{
-display:none;
+.mobileMenu a.sumir {
+    display: none;
 }
 
-.mobileMenu a:hover{
-    color:black;
+.mobileMenu a:hover {
+    color: black;
     background: #66FF99;
-    
+
 }
-#fotoLogo{
+
+#fotoLogo {
     width: 15%;
 
 }
-@media (min-width:1100px){
-    .btnDropDown{
-        display:none;
+
+@media (min-width:1100px) {
+    .btnDropDown {
+        display: none;
     }
-    .menuNavbarGrande{
-        display:flex;
+
+    .menuNavbarGrande {
+        display: flex;
     }
 }
-.foto_container{
+
+.foto_container {
     align-items: center;
 }
-.foto{
-   width: 60%;
+
+.foto {
+    width: 60%;
     margin-left: 20%;
     margin-right: 30%;
-   padding: 10px;
+    padding: 10px;
 }
 
-.titulo{
-margin-top: 5%;
-margin-left:5%;
-background-image: linear-gradient(to left,lightgreen,rgb(116, 241, 116),rgb(100, 245, 100));
-width: 50%;
-padding: 2%;
-border-radius: 10px;
-margin-bottom:5%;
-
-}
-
-.titulo a{
-    font-size: 150%;
-    }
-
-.titulo select{
-        font-size: 150%;
-        margin-top: 2%;
-        border-radius: 5px;
-        width: 50%;
-        background-color: #FFFF8F;
-        color:black
-}
-
-
-
-
-
-.wpp{
-
-display:none;
+.titulo {
     margin-top: 5%;
-margin-left:5%;
-margin-bottom: 5%;
-margin-right: 5%;
-margin-top: 5%;
-background-image: linear-gradient(to left,lightgreen,rgb(116, 241, 116),rgb(100, 245, 100));
-width: 50%;
-padding: 2%;
-border-radius: 10px;
-margin-bottom:5%;
-font-size: 150%;
+    margin-left: 5%;
+    background-image: linear-gradient(to left, lightgreen, rgb(116, 241, 116), rgb(100, 245, 100));
+    width: 50%;
+    padding: 2%;
+    border-radius: 10px;
+    margin-bottom: 5%;
 
 }
 
-.wpp button{
+.titulo a {
+    font-size: 150%;
+}
+
+.titulo select {
+    font-size: 150%;
+    margin-top: 2%;
+    border-radius: 5px;
+    width: 50%;
+    background-color: #FFFF8F;
+    color: black
+}
+
+
+
+
+
+.wpp {
+
+    display: none;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    background-image: linear-gradient(to left, lightgreen, rgb(116, 241, 116), rgb(100, 245, 100));
+    width: 50%;
+    padding: 2%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    font-size: 150%;
+
+}
+
+.wpp button {
     font-size: 120%;
     padding: 1%;
     border-radius: 5px;
     margin-top: 2%;
     background-color: lightgrey;
-    transition:5s;
-    margin-left:15%;
-    animation:piscaPisca 5s infinite;
-    width:70%;
-    height:50%;
+    transition: 5s;
+    margin-left: 15%;
+    animation: piscaPisca 5s infinite;
+    width: 70%;
+    height: 50%;
 
 }
 
-@keyframes piscaPisca{
-   0% {scale: 1.0;}
+@keyframes piscaPisca {
+    0% {
+        scale: 1.0;
+    }
 
-   50% {scale: 1.2;}
+    50% {
+        scale: 1.2;
+    }
 
-   100% {scale: 1.0;}
+    100% {
+        scale: 1.0;
+    }
 
 }
 
-@media (max-width:1160px){
+@media (max-width:1160px) {
 
-    .titulo{
-        width:80%;
-    }
-
-    .titulo select{
-        width:60%;
-    }
-    .wpp{
+    .titulo {
         width: 80%;
     }
 
-    .wpp button{
+    .titulo select {
+        width: 60%;
+    }
+
+    .wpp {
+        width: 80%;
+    }
+
+    .wpp button {
         font-size: 80%;
         padding: 1%;
         border-radius: 5px;
         margin-top: 2%;
         background-color: lightgrey;
-        transition:5s;
-        margin-left:15%;
-        animation:piscaPisca 5s infinite;
-        width:50%;
-        height:40%;
+        transition: 5s;
+        margin-left: 15%;
+        animation: piscaPisca 5s infinite;
+        width: 50%;
+        height: 40%;
     }
 
 
 
-    }
-
+}

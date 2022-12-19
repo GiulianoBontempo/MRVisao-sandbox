@@ -1,10 +1,13 @@
+/* <<<< ==== CCS DA PÁGINA DE SERVIÇOS ==== >>>>> */
+
+
 /* Estiliza todos os elementos do documento */
-body{
+body {
     padding-bottom: 1%;
 }
 
 /* Design do fundo */
-.fundo{
+.fundo {
     background-color: rgba(207, 205, 205, 0.637);
 
     margin-left: 10%;
@@ -14,86 +17,93 @@ body{
 }
 
 /*Texto dentro da divisoria da descriçao da obra */
-.conteudo_descricoes{
-    padding:5%;
-    
+.conteudo_descricoes {
+    padding: 5%;
+
 }
+
 /*Divisoria onde fica a descriçao da obra */
-.descricao{
-    margin-left:7%;
+.descricao {
+    margin-left: 7%;
 }
+
 /* Botao de candidatar-se*/
-.botao{
+.botao {
     font-family: 'Times New Roman', Times, serif;
     font-size: 100%;
     background-color: #079D56;
     border-radius: 4px;
-    padding:8px;
-    margin-bottom:5%;
+    padding: 8px;
+    margin-bottom: 5%;
 }
+
 /*Divisoria onde vao ficar os serviços */
-.servicos{
+.servicos {
     font-size: 200%;
-    padding:3%;
+    padding: 3%;
 }
+
 /*Design da divisoria do  tipo de serviço, ex, pintura, gas, limpeza */
-.tipo_servico{
+.tipo_servico {
     font-size: 90%;
     margin-left: 10%;
     margin-top: 10%;
 
 }
+
 /*Div que vai ficar o texto da descrição do serviço */
-.descricao_pintura{
+.descricao_pintura {
     font-size: 70%;
     margin-left: 5%;
 }
 
 /*Animação do botao */
-@keyframes anima{
-    0%{
+@keyframes anima {
+    0% {
         transform: scala(1);
     }
 
-    100%{
-        transform:scale(1.05);
+    100% {
+        transform: scale(1.05);
     }
 }
+
 /* Ativar a animação do botao ao passar o mouse*/
-.botao:hover{
-  animation-name: anima;
-  animation-duration: 0.8s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  background-color: #FFB719;
+.botao:hover {
+    animation-name: anima;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    background-color: #FFB719;
 }
+
 /*Design to titulo "Serviços" */
-.titulo_pintura{
+.titulo_pintura {
     margin-top: 5%;
     background: #079D56;
-    color:antiquewhite;
-    width: 100%;   
-    border:solid black;
+    color: antiquewhite;
+    width: 100%;
+    border: solid black;
     border-radius: 6px;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.tituloServico{
+.tituloServico {
     color: black;
 }
 
-.divCentralizadora{
-    padding:2%;
+.divCentralizadora {
+    padding: 2%;
     text-align: center;
 
 }
 
-#fotoObra{
+#fotoObra {
     height: 50%;
     width: 50%;
 }
 
-.textoVermelho{
+.textoVermelho {
     color: red;
 }

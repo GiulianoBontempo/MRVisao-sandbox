@@ -1,5 +1,7 @@
+// importa informações do script do kanban
 import KanbanAPI from "../api/KanbanAPI.js";
 
+// cria a classe de dropzone do kanban com seus métodos
 export default class DropZone {
     static createDropZone() {
         const range = document.createRange();

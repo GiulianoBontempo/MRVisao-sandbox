@@ -1,7 +1,8 @@
-import Column from "./Column.js";
+import Column from "./Column.js"; // importa o script da coluna
 
+// define uma classe para o kanban
 export default class Kanban {
-    constructor(root) {
+    constructor(root) { // construtor da raiz do kanban
         this.root = root;
 
         Kanban.columns().forEach(column => {
@@ -11,6 +12,7 @@ export default class Kanban {
         });
     }
 
+    // DEFINE AS COLUNAS DO KANBAN
     static columns() {
         return [
             {

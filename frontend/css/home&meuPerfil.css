@@ -36,9 +36,10 @@
 }
 
 .informacoes_documentos {
-    background-color: rgba(255, 183, 25, 0.5);;
+    background-color: rgba(255, 183, 25, 0.5);
+    ;
     border-radius: 10px;
-}  
+}
 
 .informacoes_documentos p {
     display: flex;

@@ -1,3 +1,7 @@
+/* <<<< ==== CCS DA PÁGINA DE PERFIL DO EMPREITEIRO ==== >>>>> */
+
+
+
 /*No Body, setamos a cor de fundo e a fonte base da página*/
 
 body {
@@ -7,9 +11,9 @@ body {
 
 /* Os estilos abaixo tem como objetivo tornar a Navbar esteticamente agradável*/
 
-*{
-    padding:0;
-    margin:0;
+* {
+    padding: 0;
+    margin: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;

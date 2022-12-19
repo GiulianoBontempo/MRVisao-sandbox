@@ -1,3 +1,9 @@
+// <<<< ==== SCRIPT COM ENDPOINTS E REQUISIÇÕES GET E POST ==== >>>>> //
+
+
+
+// configurações para o app rodar
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -9,7 +15,6 @@ const { query } = require('express');
 // function hash(senha) {
 //   return createHash('sha256').update(senha).digest('hex');
 // }
-
 const sqlite3 = require('sqlite3').verbose();
 const DBPATH = 'data/Projeto.db'; // dois pontos barra sobe um nível + o nome da pasta entra nela
 
@@ -39,6 +44,8 @@ app.get('/obras', (req, res) => {
     db.close(); // Fecha o banco
 });
 
+
+// ===== ENDPOINT DE STATUS DA OBRA ==== //
 app.get('/obrasStatus', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -52,6 +59,8 @@ app.get('/obrasStatus', (req, res) => {
     });
     db.close(); // Fecha o banco
 });
+
+// ===== ENDPOINT DE SERVIÇOS DA OBRA ===== //
 
 app.get('/servicosStatus', (req, res) => {
     res.statusCode = 200;
@@ -67,6 +76,7 @@ app.get('/servicosStatus', (req, res) => {
     db.close(); // Fecha o banco
 });
 
+// ===== ENDPOINT DE STATUS DO ID DA OBRA ====== //
 app.get('/obraId', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -82,7 +92,7 @@ app.get('/obraId', (req, res) => {
     db.close(); // Fecha o banco
 });
 
-// Insere um registro (é o C do CRUD - Create)
+// Insere um registro (é o C do CRUD - Create) em Obras
 app.post('/insereObra', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -99,7 +109,7 @@ app.post('/insereObra', urlencodedParser, (req, res) => {
     res.end();
 });
 
-// Monta o formulário para o update (é o U do CRUD - Update)
+// Monta o formulário para o update (é o U do CRUD - Update) em OBras
 app.get('/atualizaObra', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -116,7 +126,7 @@ app.get('/atualizaObra', (req, res) => {
     db.close(); // Fecha o banco
 });
 
-// Atualiza um registro (é o U do CRUD - Update)
+// Atualiza um registro (é o U do CRUD - Update) em Obras
 app.post('/atualizaObra', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -133,7 +143,7 @@ app.post('/atualizaObra', urlencodedParser, (req, res) => {
     db.close(); // Fecha o banco
 });
 
-// Exclui um registro (é o D do CRUD - Delete)
+// Exclui um registro (é o D do CRUD - Delete) em Obras
 app.get('/removeObra', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -151,7 +161,7 @@ app.get('/removeObra', urlencodedParser, (req, res) => {
 });
 
 
-
+// PARA RODAR A APLICAÇÃO NO CONSOLE
 app.listen(port, hostname, () => {
     console.log(`Servidor rodando em http://${hostname}:${port}/`);
 });
@@ -172,6 +182,8 @@ app.get('/usuario', (req, res) => {
     db.close(); // Fecha o banco
 });
 
+// ===== ENDPOINT COM INFORMAÇÕES DO USUÁRIOS PELO SEU ID===== //
+
 app.get('/usuarioId', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -186,7 +198,7 @@ app.get('/usuarioId', (req, res) => {
     db.close(); // Fecha o banco
 });
 
-// Insere um registro (é o C do CRUD - Create)
+// Insere um registro (é o C do CRUD - Create) do usuário
 app.post('/insereUsuario', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -203,7 +215,7 @@ app.post('/insereUsuario', urlencodedParser, (req, res) => {
     res.end();
 });
 
-// Monta o formulário para o update (é o U do CRUD - Update)
+// Monta o formulário para o update (é o U do CRUD - Update) do usuário
 app.get('/atualizaUsuario', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -220,7 +232,7 @@ app.get('/atualizaUsuario', (req, res) => {
     db.close(); // Fecha o banco
 });
 
-// Atualiza um registro (é o U do CRUD - Update)
+// Atualiza um registro (é o U do CRUD - Update) do usuário
 app.post('/atualizaUsuario', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -237,10 +249,11 @@ app.post('/atualizaUsuario', urlencodedParser, (req, res) => {
     db.close(); // Fecha o banco
 });
 
+// Remove um registro (é o D do CRUD - Delete) do usuário
 app.get('/removeUsuario', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
-    sql = "DELETE FROM usuarios WHERE usuario_id='" + req.query.usuario_id + "'"; 
+    sql = "DELETE FROM usuarios WHERE usuario_id='" + req.query.usuario_id + "'";
     console.log(sql);
     var db = new sqlite3.Database(DBPATH); // Abre o banco
     db.run(sql, [], err => {
@@ -253,8 +266,7 @@ app.get('/removeUsuario', urlencodedParser, (req, res) => {
     db.close(); // Fecha o banco
 });
 
-
-
+// ===== ENDPOINT COM INFO SOBRE FEEDBACKS ====== //
 app.get('/feedback', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -269,6 +281,7 @@ app.get('/feedback', (req, res) => {
     db.close(); // Fecha o banco
 });
 
+// ===== ENDPOINT COM INFO SOBRE FEEDBACKS POR ID ====== //
 app.get('/feedbackId', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -283,7 +296,7 @@ app.get('/feedbackId', (req, res) => {
     db.close(); // Fecha o banco
 });
 
-// Insere um registro (é o C do CRUD - Create)
+// Insere um registro (é o C do CRUD - Create) nos Feedbacks
 app.post('/insereFeedback', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -300,7 +313,7 @@ app.post('/insereFeedback', urlencodedParser, (req, res) => {
     res.end();
 });
 
-// Monta o formulário para o update (é o U do CRUD - Update)
+// Monta o formulário para o update (é o U do CRUD - Update) nos Feedbacks
 app.get('/atualizafeedback', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -317,7 +330,7 @@ app.get('/atualizafeedback', (req, res) => {
     db.close(); // Fecha o banco
 });
 
-// Atualiza um registro (é o U do CRUD - Update)
+// Atualiza um registro (é o U do CRUD - Update) nos Feedbacks
 app.post('/atualizafeedback', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -334,10 +347,11 @@ app.post('/atualizafeedback', urlencodedParser, (req, res) => {
     db.close(); // Fecha o banco
 });
 
+// Remove um registro (é o D do CRUD - Delete) nos Feedbacks
 app.get('/removeFeedback', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
-    sql = "DELETE FROM feedbacks WHERE usuario_id='" + req.query.feedback_id + "' AND servico_id'" + req.query.servico_id + "'"; 
+    sql = "DELETE FROM feedbacks WHERE usuario_id='" + req.query.feedback_id + "' AND servico_id'" + req.query.servico_id + "'";
     console.log(sql);
     var db = new sqlite3.Database(DBPATH); // Abre o banco
     db.run(sql, [], err => {
@@ -349,11 +363,6 @@ app.get('/removeFeedback', urlencodedParser, (req, res) => {
     });
     db.close(); // Fecha o banco
 });
-
-
-
-
-
 
 ///// JOIN DAS TABELAS ///////
 app.get('/obraMaisUsuario', (req, res) => {
@@ -386,6 +395,7 @@ app.get('/servicos', (req, res) => {
     db.close(); // Fecha o banco
 });
 
+// ===== ENDPOINT COM INFO SOBRE SERVIÇOS PELO ID ====== //
 app.get('/servicosId', (req, res) => {
     res.statusCode = 200;
     // const idObra  = req.params.idObra
@@ -401,6 +411,7 @@ app.get('/servicosId', (req, res) => {
     db.close(); // Fecha o banco
 });
 
+// ===== ENDPOINT COM INFO SOBRE SERVIÇOS DE ACORDO COM ID DA OBRA ====== //
 app.get('/servicosObraId', (req, res) => {
     res.statusCode = 200;
     // const idObra  = req.params.idObra
@@ -415,6 +426,8 @@ app.get('/servicosObraId', (req, res) => {
     });
     db.close(); // Fecha o banco
 });
+
+// Cria um registro (é o C do CRUD - Create) nos Feedbacks
 
 app.post('/insereServico', urlencodedParser, (req, res) => {
     res.statusCode = 200;
@@ -432,6 +445,7 @@ app.post('/insereServico', urlencodedParser, (req, res) => {
     res.end();
 });
 
+// Cria um registro (é o C do CRUD - Create) nos admins
 app.post('/insereAdmin', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -448,6 +462,7 @@ app.post('/insereAdmin', urlencodedParser, (req, res) => {
     res.end();
 });
 
+// ===== ENDPOINT COM INFO SOBRE ADMINS ====== //
 app.get('/admin', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -463,7 +478,7 @@ app.get('/admin', (req, res) => {
 });
 
 
-// Monta o formulário para o update (é o U do CRUD - Update)
+// Monta o formulário para o update (é o U do CRUD - Update) nos serviços
 app.get('/atualizaServico', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -480,7 +495,7 @@ app.get('/atualizaServico', (req, res) => {
     db.close(); // Fecha o banco
 });
 
-// Atualiza um registro (é o U do CRUD - Update)
+// Atualiza um registro (é o U do CRUD - Update) nos serviços
 app.post('/atualizaServico', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -497,7 +512,7 @@ app.post('/atualizaServico', urlencodedParser, (req, res) => {
     db.close(); // Fecha o banco
 });
 
-
+// ===== ENDPOINT COM STATUS SOBRE SERVIÇOS ====== //
 app.get('/atualizaStatusServico', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -514,6 +529,7 @@ app.get('/atualizaStatusServico', urlencodedParser, (req, res) => {
     db.close(); // Fecha o banco
 });
 
+// ===== ENDPOINT COM STATUS SOBRE OBRAS ====== //
 app.get('/atualizaStatusObra', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -530,10 +546,11 @@ app.get('/atualizaStatusObra', urlencodedParser, (req, res) => {
     db.close(); // Fecha o banco
 });
 
+// Remove um registro (é o D do CRUD - Delete) nos serviços
 app.get('/removeServico', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
-    sql = "DELETE FROM servicos WHERE usuario_id='" + req.query.servico_id + "'"; 
+    sql = "DELETE FROM servicos WHERE usuario_id='" + req.query.servico_id + "'";
     console.log(sql);
     var db = new sqlite3.Database(DBPATH); // Abre o banco
     db.run(sql, [], err => {
@@ -563,17 +580,18 @@ app.post('/insereCandidatura', urlencodedParser, (req, res) => {
     res.end();
 });
 
+// ===== ENDPOINT COM STATUS SOBRE LOGIN ====== //
 app.get('/login', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
-    if(req.query.usuario_id){
+    if (req.query.usuario_id) {
         let empreiteiro_id = req.query.usuario_id;
         res.cookie("empreiteiro_id", empreiteiro_id, {
             httpOnly: true
         });
         res.redirect("../frontend/meuPerfil.html");
     }
-    else if (req.query.admin_id){
+    else if (req.query.admin_id) {
         let admin = req.query.admin_id
         res.cookie("admin_id", admin, {
             httpOnly: true
@@ -582,48 +600,45 @@ app.get('/login', urlencodedParser, (req, res) => {
     }
 });
 
+// ===== ENDPOINT COM STATUS SOBRE LOGOUT ====== //
 app.get('/logout', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.clearCookie("empreiteiro_id");
+    res.clearCookie(req.headers.cookie);
     res.redirect("../frontend/home.html");
 });
 
-app.get('/logoutAdmin', urlencodedParser, (req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.clearCookie();
-    res.redirect("../frontend/home.html");
-});
-
+// ===== ENDPOINT COM STATUS SOBRE COOKIES ====== //
 app.get('/cookies', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
-    if(req.headers.cookie){
-        if(req.headers.cookie.includes("empreiteiro_id")){
+    if (req.headers.cookie) {
+        if (req.headers.cookie.includes("empreiteiro_id")) {
             res.json(req.headers.cookie);
-        } else{
+        } else {
             res.json("deslogado");
         }
-    } else{
+    } else {
         res.json("deslogado");
     }
 });
 
+// ===== ENDPOINT COM STATUS SOBRE COOKIES DO ADMIN ====== //
 app.get('/cookiesAdmin', urlencodedParser, (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');
-    if(req.headers.cookie){
-        if(req.headers.cookie.includes("admin")){
+    if (req.headers.cookie) {
+        if (req.headers.cookie.includes("admin")) {
             res.json(req.headers.cookie);
-        } else{
+        } else {
             res.json("deslogado");
         }
-    } else{
+    } else {
         res.json("deslogado");
     }
 });
 
+// ===== ENDPOINT COM STATUS SOBRE CANDIDATURAS POR ID DO SERVIÇO ====== //
 app.get('/candidaturasServicoId', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Access-Control-Allow-Origin', '*');

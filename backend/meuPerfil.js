@@ -1,3 +1,6 @@
+// <<<< ==== SCRIPT COM FUNÇÕES, FETCHS E LÓGICAS DO PERFIL DO EMPREITEIRO ==== >>>>> //
+
+
 var perfil;
 
 let parametroURL = new URLSearchParams(window.location.search)
@@ -10,6 +13,7 @@ let notaMedia = 0;
 let notaFinal = 0;
 let saidaModal = '';
 
+// fetch para obter informações guardada nos cookies
 fetch('/cookies')
     .then((response) => {
         return response.json();
@@ -54,6 +58,7 @@ fetch('/cookies')
                 })
             })
     })
+
 //fetch responsável por fazer com que a página possa acessar todos os usuários do banco de dados e puxe as informações a serem exibidar no "cabeçalho"
 fetch('/usuario')
     .then((response) => {

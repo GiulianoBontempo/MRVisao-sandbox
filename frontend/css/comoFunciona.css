@@ -1,3 +1,5 @@
+/* <<<< ==== CCS DA PÁGINA DE COMO FUNCIONA ==== >>>>> */
+
 
 body {
     background-color: #ffffff;
@@ -17,13 +19,15 @@ body {
     border: none;
 }
 
-span{
+span {
     margin-left: 6%;
 }
 
 .accordion-body {
     margin-left: 15%;
-}/* 
+}
+
+/* 
 
 .accordion-item:first-of-type .accordion-button {
     border-top-right-radius: 0%;
@@ -36,7 +40,8 @@ span{
     
 } */
 
-.accordion-button:focus, .accordion-button:not(.collapsed){
+.accordion-button:focus,
+.accordion-button:not(.collapsed) {
     background-color: #079D56;
     color: black;
     box-shadow: none;
@@ -79,7 +84,7 @@ span{
     padding-bottom: 8%;
 }
 
-h1{
+h1 {
     font-size: xx-large;
     text-align: center;
     margin-right: 20%;

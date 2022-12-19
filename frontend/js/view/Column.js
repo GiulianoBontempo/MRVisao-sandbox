@@ -1,11 +1,14 @@
+// IMPORTA OS SCRIPTS DA API, ITEM E DROPZONE
 import KanbanAPI from "../api/KanbanAPI.js";
 import DropZone from "./DropZone.js";
 import Item from "./Item.js";
 
+// cria uma classe da coluna do kanban
 export default class Column {
-    constructor(id, title) {
+    constructor(id, title) { // cria os construtores com id e titulo de propriedades
         const topDropZone = DropZone.createDropZone();
 
+        // define as propriedades dessa classe
         this.elements = {};
         this.elements.root = Column.createRoot();
         this.elements.title = this.elements.root.querySelector(".kanban__column-title");
@@ -27,11 +30,13 @@ export default class Column {
         });
     }
 
+    // define os métodos dessa classe
     static createRoot() {
         const range = document.createRange();
 
         range.selectNode(document.body);
 
+        // adiciona esse html
         return range.createContextualFragment(`
 			<div class="kanban__column">
 				<div class="kanban__column-title"></div>
@@ -41,6 +46,7 @@ export default class Column {
 		`).children[0];
     }
 
+    // renderiza esse pedaço de código
     renderItem(data) {
         const item = new Item(data.id, data.content);
 

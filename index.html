@@ -7,14 +7,16 @@
     <meta name="viewport" content="width=device-width" />
     <title>CRUD</title>
 </head>
-<h1>Listagem de Obras</h1>
-<p><a href="/frontend/inserir.html">INSERIR NOVA OBRA</a></p>
+<h1>LISTAGEM DE PÁGINAS</h1>
+<p><a href="/frontend/home.html">HOME</a></p>
+<p><a href="/frontend/homeAdmin.html">HOME ADMIN</a></p>
 <p><a href="/frontend/obras.html">PAGINA DE OBRAS</a></p>
+<p><a href="/frontend/inserir.html">INSERIR NOVA OBRA</a></p>
 <p><a href="/frontend/comoFunciona.html">PAGINA DE COMO FUNCIONA</a></p>
+<p><a href="/frontend/wpp.html">PAGINA DE WHATSAPP</a></p>
 <p><a href="/frontend/login.html">PAGINA DE LOGIN</a></p>
+<p><a href="/frontend/cadastro.html">PAGINA DE CADASTRO</a></p>
 <p><a href="/frontend/meuPerfil.html">PAGINA DE PERFIL</a></p>
-<p><a href="/frontend/ofertas.html">PAGINA DE OFERTAS</a></p>
-<p><a href="/frontend/home.html">HOME LUQUITA</a></p>
 
 <script>
     const url = '/obras';
@@ -33,7 +35,7 @@
             });
             document.getElementById('resultado').innerHTML = saida;
         })
-        .catch(function(error) {
+        .catch(function (error) {
             console.log(error);
         });
 
@@ -51,7 +53,7 @@
             });
             document.getElementById('resultado_usuario').innerHTML = saida2;
         })
-        .catch(function(error) {
+        .catch(function (error) {
             console.log(error);
         });
 
@@ -67,20 +69,20 @@
             });
             document.getElementById('resultado_admin').innerHTML = saida3;
         })
-        .catch(function(error) {
+        .catch(function (error) {
             console.log(error);
         });
-    
+
 
 
 </script>
 
 <body>
-    <h2>OBRAS</h2>
+    <h2>OBRAS CRIADAS</h2>
     <div id="resultado"></div>
-    <h2>USUARIOS</h2>
+    <h2>USUARIOS CADASTRADOS</h2>
     <div id="resultado_usuario"></div>
-    <h2>ADMIN</h2>
+    <h2>ADMIN - CREDENCIAL</h2>
     <div id="resultado_admin"></div>
 </body>
 

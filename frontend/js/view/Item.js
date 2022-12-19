@@ -1,7 +1,9 @@
+// importa os dados desses scripts
 import DropZone from "./DropZone.js";
 import KanbanAPI from "../api/KanbanAPI.js";
 import { response } from "express";
 
+// cria uma classe para os itens do kanban
 export default class Item {
     constructor(id, nome, proposta, num) {
         const bottomDropZone = DropZone.createDropZone();

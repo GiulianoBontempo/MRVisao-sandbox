@@ -1,3 +1,6 @@
+/* <<<< ==== CCS DA PÁGINA INICIAL DO ADMIN ==== >>>>> */
+
+
 body {
     background-color: white;
 
@@ -142,7 +145,7 @@ table img {
     background-color: #00000000;
 }
 
-@media (max-width:940px){
+@media (max-width:940px) {
 
     #botaoFiltrar {
         width: 80px;
@@ -155,9 +158,10 @@ table img {
         font-weight: 600;
         padding: 10px;
     }
-    #filtroStatus{
-        width:330px;
-        font-weight:600 ;
+
+    #filtroStatus {
+        width: 330px;
+        font-weight: 600;
         font-size: 65%;
     }
 
